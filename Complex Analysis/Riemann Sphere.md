@@ -1,0 +1,24 @@
+Riemann sphere is a model of the extended complex plane $\overline{\mathbb C}=\mathbb C\cup\set{\infty}$, associating every point $c\in\overline{\mathbb C}$ with a point $\hat c\in\Sigma$ by a line through the north pole $N$ (representing $\infty$). This is usually referred to as a **stereographic projection**. We'll denote this sphere as $\mathbb P$. ![[Pasted image 20250301193326.png]]
+- **Coordinate transform**: given complex number $\xi$, corresponding Cartesian coordinate $(x,y,z)$ and spherical coordinate $(\theta,\phi)$, we have the identity $$\xi=\frac{x+iy}{1-z}=\cot\left(\frac{\theta}{2}\right)e^{i\phi}$$
+- **Complex inversion** $z\mapsto 1/z$: it induces a rotation of $\Sigma$ about the real axis $\mathbb R$ through $\pi$.
+	- **Conformity**: complex inversion is conformal. This is different from geometric inversion and reflection, which are anti-conformal, i.e., size of angle is preserved but direction is inverted.
+- **Compactness**: define topology $\mathcal T$ to consist of all $\mathbb C\backslash K$ or $\overline{\mathbb C}\backslash K$ where $K\subset\mathbb C$ is compact. This is exactly the Alexandroff one-point compactification. [[Point Set Topology]]
+  **Proof**: consider any open cover $\bigcup U_n=\overline{\mathbb C}$. By stereographic projection we find the $\bigcup U_n'=\mathbb P$, which of course has a finite sub-cover.
+	- **Intuition**: $\mathbb C$ is of course not compact since it's infinite. However by adding $\infty$ we ensure that any open cover will have to include an element that is large enough to cover the neighborhood of $\infty$, leaving a finite subset to care about, which is of course compact itself.
+## Möbius transform
+**Möbius transformation** $f:\overline{\mathbb C}\to\overline{\mathbb C}$ are functions of the form $$f(z)=\frac{az+b}{cz+d},\quad ad-bc\neq0$$Note that obviously it's an entire bijection.
+- **Decomposition**: a Möbius transform can always be decomposed into dilation, rotation, translation, and inversion. This yields the following properties:
+	- **Preservation of direction**: the interior/exterior relation is preserved under Möbius transform.
+	- **Conformity**: Möbius transform is conformal, since it's a composition of complex inversion, dilation, rotation, and translation.
+	- **Symmetry principle**: if two points are symmetric w.r.t a circle, then their images are symmetric w.r.t the image circle, since symmetry is preserved by complex inversion.
+- **Visualization**: given $M$ with fixed points $\xi_+,\xi_-$ denote $F(z)=\frac{z-\xi_+}{z-\xi_-}$, then $\widetilde M=F\circ M\circ F^{-1}$ has fixed points $0,\infty$, hence $\widetilde M(z)=mz$, which is a rotation combined with an expansion. By property of involution $M$ maps any circle in the family $\mathcal C_1(\mathcal C_2)$ to another element in this family. ![[Pasted image 20250304183158.png]]The intuition is more clear under the perspective of Riemann sphere. We have the correspondence $$\begin{align}\text{translation of }\mathbb C\quad&\longleftrightarrow\quad\text{horizontal translation of }\mathbb P\\\text{dilation of }\mathbb C\quad&\longleftrightarrow\quad\text{vertical translation of }\mathbb P\\\text{rotation of }\mathbb C\quad&\longleftrightarrow\quad\text{rotation of }\mathbb P\text{ w.r.t }(0,\infty)\\\text{complex inversion on }\mathbb C\quad&\longleftrightarrow\quad\text{rotation of }\mathbb P\text{ w.r.t }\mathbb R\end{align}$$
+- **Preservation of cross ratio**: for four ordered points define $$(z_1,z_2,z_3,z_4)=\left.\frac{z_4-z_1}{z_4-z_2}\right/\frac{z_3-z_1}{z_3-z_2}$$where the value is replaced by $1$ when there is $\infty$. Direct computation shows that Möbius transform preserves cross ratio. This provide a method to compute the expression of the transform.
+	- **Preservation of circles**: Möbius transform maps circles to circles, and is the only transform that do so. This is obvious since four points are co-circle iff their cross ratio is real.
+- **Fixed point**: any non-trivial Möbius transform has two fixed points (counted by multiplicity). 
+- **Classification**: we classify MT into four categories:
+	- **Elliptic**: those performing pure rotation within each $C\in\mathcal C_2$.
+	- **Hyperbolic**: those performing pure expansion to each $C\in\mathcal C_2$. In this case $\xi_\pm$ are called **repulsive/attractive fixed points**.
+		- **Multiplier**: the expansion coefficient w.r.t $\xi_+$ is $m_+=\frac{a-c\xi_+}{a-c\xi_-}$.
+	- **Loxodromic**: composition of elliptic and hyperbolic MT.
+	- **Parabolic**: when $\xi_+=\xi_-$ then $M$ is a pure translation.
+- **Cayley transform**: an important Möbius transform is the one s.t. $\mathbb R_+^2\leftrightarrow\mathbb D$ given by $$\begin{align}&\mathbb D\to \mathbb R_+^2,\quad z\mapsto-i\frac{z+1}{z-1},\quad(1,-i,i)\mapsto(\infty,1,-1)\\&\mathbb R_+^2\to\mathbb D,\quad z\mapsto\frac{z-i}{z+i},\quad(\infty,1,-1)\mapsto(1,-i,i)\end{align}$$
