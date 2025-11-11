@@ -1,0 +1,8 @@
+In general, the **iterative method** refers to the process that uses an algorithm $\Phi$, an initial value $x_0$, and the iteratively generated sequence $$x_{n+1}=\Phi(x_n),\quad\forall n\in\mathbb N$$to solve a class of problems.
+## Attractive fixed point
+
+## Contraction mapping
+A common realization of iterative method relies on the **Banach fixed point theorem** ([[Metric Space]]). As long as some $T$ is verified to be a contraction mapping, we can immediately apply iterative method to construct something meaningful.
+- **Picard-Lindelöf theorem**: this theorem utilizes the contraction property of the integral equation equivalent to a [[First Order ODE]], and serves as a prototypical example of how the contraction mapping can be utilized in analysis. 
+	- **Iteration under perturbation**: this method is not limited to the integral equation derived directly from the target first order ODE. For example, for a second order ODE $$y''+(1+r(x))y=0,\quad r(x)\in C([1,\infty)),\|r\|_1<\infty$$we can similarly show that the ODE is equivalent to $$y=\cos(x)+\int_x^\infty \sin(x-t)r(t)g(t)dt$$and further verify that the above also gives rise to a contraction mapping.
+- **Runge-Kutta method**: RK method provide another example of how iterative method can be used for numerical problems. Note that it's a composite iterative method, since in each step a final slope is calculated iteratively, and then the $x$ value goes forward a step, after which the above process will repeat itself.

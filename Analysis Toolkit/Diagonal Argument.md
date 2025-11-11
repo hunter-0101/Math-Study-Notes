@@ -1,0 +1,8 @@
+**Diagonal argument** is a proof technique for constructing a sequence of elements satisfying a desired property, usually in the form that each element is extracted from a one of a family of sequences. Concretely, given a sequence of sequences $$X_i=(x_{ij})_{j=1}^\infty,\quad i\in\mathbb N_{\ge1}$$the typical selection looks like: $$\begin{array}{c|ccccc}&1&2&3&4&\cdots\\\hline X_1&{\color{blue}x_{11}}&x_{12}&x_{13}&x_{14}&\cdots\\ X_2&x_{21}&{\color{blue}x_{22}}&x_{23}&x_{24}&\cdots\\X_3&x_{31}&x_{32}&{\color{blue}x_{33}}&x_{34}&\cdots\\X_4&x_{41}&x_{42}&x_{43}&{\color{blue}x_{44}}&\cdots\\\vdots&\vdots&\vdots&\vdots&\vdots&\ddots\end{array}$$
+- **Relation with [[Subsequence Acceleration]]**: diagonal argument is very like a 2-dimensional subsequence acceleration, in which the total set we pick elements from is indexed by two axises, and the selection of subsequence happens in two axises simultaneously - more specifically, in the diagonal of the plain.
+## Examples
+- **Cantor's theorem**: when showing that $|A|<|\mathcal P(A)|$ we construct a set that cannot be mapped to by any map from $A$ mainly along the diagonal of the True-False table signifying inclusion. [[Cardinality]]
+- **Compactness $\iff$ completeness and total boundedness**: in [[Metric Space]] when proving the third definition of compactness we used diagonal argument to extract a Cauchy subsequence based on total boundedness. 
+	- In this note entry many interesting results utilizes the idea of diagonal argument.
+- **Compact [[Operator]]**: when constructing a converging subsequence of $\set{Tu_n}$ the diagonal argument is utilized.
+- **Compactness criterion in [[Hilbert Space]]**: 

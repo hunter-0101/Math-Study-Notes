@@ -1,0 +1,5 @@
+The key idea is **procedural approximation**. Usually to prove a function has some kind of property, or satisfy some identity/inequality, we may first consider the simple case (constant function), then elaborate a bit (piecewise constant), and finally find some way for transition to the original functions. Example includes: 
+- **Riemann integral system**: like Riemann-Lebesgue lemma in [[Fourier Series]]. Last stage of transition is usually guaranteed by Riemann integrability.
+- **Lebesgue integral system**: in [[Lebesgue Integral]] system the most frequently used DCT follows this central idea. Here the transition is supported by continuity of [[Measure]].
+- **Convolution**: when showing the universal expression of convolution we also make use of this general idea. [[Convolution]]
+- **Equi-distribution theorem**: used to translate the property of simple functions to more complex ones. 
