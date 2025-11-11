@@ -1,0 +1,3 @@
+## Direct product
+For a collection of rings $\{R_i|I\in I\}$, then direct product is defined using Cartesian product $\prod_{i\in I}R_i$ with component-wise operations, and the natural projection map $\pi_j:\prod R_i\to R_j$ is a ring homomorphism.
+- **Universal property**: for any ring $T$ and a family of ring homomorphisms $\alpha_i:T\to R_i$, there is a unique ring homomorphism $\beta:T\to\prod R_i$ such that $\alpha_i=\pi_i\circ\beta$ for all $i\in I$.

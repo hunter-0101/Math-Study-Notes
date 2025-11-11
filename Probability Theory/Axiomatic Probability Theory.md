@@ -1,0 +1,10 @@
+**Motivation**: probability theory, as a theory of randomness, assumes that there is some **hidden order which is unattainable by the observer**. Hence to perform meaningful mathematical investigations we need a "rule" that measure the probability of events, which is done by [[Measure]].
+## Subjectivism & Frequentism
+- **Subjectivism**, also known as Bayesian probability, give the notion of probability a **subjective status** by regarding it as a measure of the '**degree of belief**' of the individual assessing the uncertainty of a particular situation.
+- **Frequentism** posits that the probability of an event is its **relative frequency over time**, i.e., its relative frequency of occurrence after repeating a process a large number of times under similar conditions.
+A famous problem illustrating their differences is the Monty Hall problem. Another related problem is that, consider three cards colored B/B, B/W, W/W. Randomly select one and put it on the table. If the upper side is B, then what's the probability that it's B/B, and B/W?
+## Paradoxes
+- **Balls and urn**: given a infinitely large urn and infinite balls marked with positive integers, consider the following cases:
+	- At $\frac{1}{2}$ minutes, put $1\sim10$ into the urn and take $10$ out. $\frac{1}{4}$ minutes later put $11\sim20$ into the urn and take $20$ out. Go out and finally the urn has infinite balls in it, as it contains all the positive integers except $10k$
+	- At $\frac{1}{2}$ minutes, put $1\sim10$ into the urn and take $1$ out. $\frac{1}{4}$ minutes later put $11\sim20$ into the urn and take $2$ out. Go out and finally there will be no ball in the urn, as any number would be taken out at the step n
+	- Follow the same rule of putting the balls into the urn, but the ball to be taken out is chosen randomly. I can be proven that the urn will finally be empty with probability 1, as we can calculate that $$P(\text{ball k is not taken out})\to0\quad\text{as}\quad n\to+\infty$$
