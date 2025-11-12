@@ -2,8 +2,10 @@ A **ring** is a tuple $(R,+,\cdot)$ of a set $R$ and two binary operations $+,\c
 1. **Group structure**: $(R,+)$ is an abelian group, and $(R,\cdot)$ is a monoid. [[Group]]
 2. **Distributivity**: $+$ is distributive w.r.t $\cdot$.
 By definitions additive and multiplicative identities $0,1$ are unique. Some authors do not require existence of multiplicative identity in the definition of ring, which we'll refer to as a **rng** in this vault. We say that $R$ is commutative if $\cdot$ is commutative, which is assumed in most cases.
-- **Zero divisor**: $a$ is a zero divisor if there exists $b\neq0$ s.t. $ab=ba=0$. We can it left/right zero divisor when only one of them equals $0$.
-	- The **canceling law holds for a ring without zero divisor**. Note that in such case we're not using the inverse, but the reasoning that $ab=ac\Rightarrow a(b-c)=0\Rightarrow b-c=0$.
+- **Divisor**: for $ax=b$ we call $a$ a **left divisor** of $b$, and $b$ a **right multiple** of $a$. Similarly we can define right divisor and left multiple. A divisor that is both a left and right divisor is called a **two-sided divisor**. 
+	- **GCD & LCM**: $d=\gcd(a,b)$ if it's a common divisor of $a,b$, and any common divisor of $a,b$ divides $d$. We can define $m=\lcm(a,b)$ in a similar manner. 
+		- **Uniqueness issue**: GCD (LCM) is obviously not unique for general rings.
+	- **Zero divisor**: $a$ is a zero divisor if there exists $b\neq0$ s.t. $ab=ba=0$. We can it left/right zero divisor when only one of them equals $0$.
 - **Unit**: $a\in R$ is a unit if it's multiplicatively invertible. The set of units in $R$ is denoted $R^\times$. 
 	- **Division ring**: $R$ is said to be a division ring (skew field) if $R^\times=R-\set{0}$.
 	- If $u\in R^\times$ and $s$ is nilpotent in a commutative ring $R$, then $u+s\in R^\times$. We only need to expand the geometric series $(1+(u^{-1}s))^{-1}$.
@@ -41,12 +43,3 @@ We define $\aut(R)$ to contain all ring automorphisms of $R$. Sometimes $\aut(R,
 - **Skolem-Noether theorem**: for simple unitary rings $A,B$ and $K=Z(B)$, $K$ is a field due to simplicity. If the dimension of $B$ over $K$ is finite, and $A$ is also a $K$-algebra, then given $K$-algebra homomorphisms $f,g:A\to B$, there exists a unit $b\in B$ such that $$g(a)=b\cdot f(a)\cdot b^{-1}$$In particular, every automorphism of a central simple $K$-algebra is an inner automorphism.
 - Given $\phi\in\aut(R,+)$, if for any $a,b\in R$ at least one of the following holds: $$\phi(ab)=\phi(a)\phi(b)\quad\text{or}\quad\phi(ab)=\phi(b)\phi(a)$$then $\phi$ is either an automorphism or an anti-automorphism for $(R,\cdot)$.
   **Proof**: for any $a\in R$ denote $$l(a)=\set{r\in R:\phi(ar)=\phi(a)\phi(r)},\quad r(a)=\set{r\in R:\phi(ar)=\phi(r)\phi(a)}$$then since $\phi\in\aut(R,+)$ we know that $l(a),r(a)\le(R,+)$, hence by the avoidance lemma ([[Group]]) and the assumption we have either $l(a)=R$ or $r(a)=R$. Now we set $$l(R)=\set{r\in R:l(r)=R},\quad r(R)=\set{r\in R:r(r)=R}$$then the above argument can be repeated, showing that either $l(R)=R$ or $r(R)=R$, i.e., $\phi$ is an automorphism or an anti-homomorphism. 
-## Integral domain
-**Commutative** ring $R$ is called an **integral domain** if it contains no nonzero zero divisor.
-- **Commutativity**: an integral domain is commutative.
-  **Proof**: if there exits $a,b\neq 0$ s.t. $ab\neq ba$, then 
-- **Irreducibility**: take $p$ a nonzero non-unit, then $p$ is said to be irreducible if $p=xy$ implies $x\in R^*$ or $y\in R^*$.
-- **Prime**: $p\in R$ is prime if $p\mid xy$ implies $p\mid x$ or $p\mid y$, i.e., $(p)$ is prime given $R$ commutative.
-	- **Relation between irreducibility and primeness**: in an integral domain and $p$ a nonzero non-unit we have that $(p)$ maximal implies $p$ prime, which further implies $p$ irreducible. When $R$ is a PID then the above three conditions are equivalent.
-- **GCD domain**: a GCD domain is an integral domain in which any two elements has a greatest common divisor ([[Division]]).
-	- **Unique factorization domain (UFD)**: 
