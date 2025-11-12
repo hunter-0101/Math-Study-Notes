@@ -1,0 +1,5 @@
+Functions are usually given in list of values, making it impossible to perform strict symbolic differentiation. Several methods are used to work out an approximate differentiation in such cases.
+## Differentiation via interpolation
+Given a list function $(x_i,f(x_i))$ we may take its polynomial interpolation $L_n$ and take $\frac{d}{dx}L_n$ as an approximate derivative. For $f^{(k)}(x)=L_n^{(k)}(x)+R_n^{(k)}(x)$ the general formula is given by $$f^{(k)}(x)\approx L_n^{(k)}(x)=\sum_{i=0}^nf(x_i)l_i^{(k)}(x),\quad\mathcal D^kR_n(x)=\frac{d^k}{dx^k}\left(\frac{f^{(n+1)}(\xi)}{(n+1)!}\prod_{i=0}^n(x-x_i)\right)$$
+## Method of undetermined coefficients
+This is essentially the same as that in [[Numerical Integration]]. Just solve the linear system $$\mathcal D^sx^k=\sum A_if(x_i)+\cdots\quad\text{for some }s,k,x_i$$to get an approximation. Here $x_i$ should be chosen to simplify calculation, while $s,k$ should be chosen according to RHS.
