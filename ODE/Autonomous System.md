@@ -1,0 +1,37 @@
+An autonomous system is a system of ODEs of the form $$\mathbf{x}'(t)=\mathbf{F}(\mathbf{x}(t)),\quad\mathbf{x}(t)=(x_1(t),\cdots,x_n(t))^T$$which does not explicitly depend on the independent variable $t$.
+- **Time-invariant**: absence of $t$ in the equation means that the "velocity" at any point only depends on the position, thus it makes sense to introduce the **phase space** which is static.
+- **Singular solution**: a singular solution $x$ satisfies $F(x(t))=0$, i.e., it's a constant solution, and cannot be obtained by picking any $t$ in the general solution. 
+## Stability 
+As any solution can be transformed into the singular solution, it suffice to only discuss the stability of any singular point. There are many notions of stability for an equilibrium (singular) solution $F(x_e)=0$. 
+- **Lyapunov stability**: for every $\varepsilon>0$, there exists a $\delta>0$ such that $$||x(0)-x_e||<\delta\quad\Rightarrow\quad||x(t)-x_e||<\varepsilon,\quad\forall t>0$$if the conditions are not satisfied, then the solution is called **unstable**. 
+- **Asymptotic stability**: an equilibrium is Lyapunov stable, and there exists $\delta>0$ such that $$||x(0)-x_e||<\delta\quad\Rightarrow\quad\lim_{t\to\infty}||x(t)-x_e||=0,\quad\forall t>0$$Note that the condition is stronger than Lyapunov stability, which does not require $\delta$ to be non-zero when then limit $0$ is reached.
+	- When the above condition holds for every $x$ in space, then $x_e$ is called **globally asymptotic stable**.
+- **Exponential stability**: an equilibrium is asymptotically stable, and there exists $\alpha,\beta,\delta>0$ such that $$||x(0)-x_e||<\delta\quad\Rightarrow\quad||x(t)-x_e||\le\alpha||x(0)-x_e||e^{-\beta t},\quad\forall t>0$$This means that solutions not only converge, but in fact converge no slower than the particular known rate $\alpha||x(0)-x_e||e^{-\beta t}$.
+Note that attractivity is not equivalent to stability. Solution to $x''+\omega x^2=0$ is stable but not attracting; $r'=r(1-r),\varphi'=r(1-\cos\varphi)$ (in polar coordinate) is attracting but not stable.
+## Stability of 2D linear autonomous system
+To classify the stability in 2D linear autonomous system $X'(t)=AX(t)$ we usually transform the coefficient matrix $A$ to its Jordan form. As matrix similarity preserves determinant and trace, it makes sense to classify the solutions using the $(\det A,\operatorname{tr} A)$ plane. Note that it's essentially a classification based on eigenvalues, which can more easily be generalized to n-dimension, just as what we've done in [[Linear ODE]]
+![[Pasted image 20241210090709.png]]
+### Almost linear system
+For a more general $\frac{dx}{dt}=f(x,y),\frac{dy}{dt}=g(x,y)$, around the singular point $(0,0)$ we may use the Taylor expansion to get a form similar to a linear system $$\begin{align}\frac{dx}{dt}&=f_x(0,0)x+f_y(0,0)y+\phi(x,y)\\\frac{dy}{dt}&=g_x(0,0)z+g_y(0,0)y+\psi(x,y)\end{align}$$if the above system satisfies the condition $$\lim_{x,y\to0}\frac{\phi(x,y)}{\sqrt{x^2+y^2}}=0,\quad\lim_{x,y\to0}\frac{\psi(x,y)}{\sqrt{x^2+y^2}}=0$$then we call it an **almost linear system**. The stability of its singular point is exactly the same as the corresponding linear system.
+## Lyapunov funciton
+**Motivation**: in the geometric sense, stability is a state to which every trajectory converges. This can be perceived as a funnel defined by a "potential function" along which the energy decreases. Thus we would like to formalize this energy function as well as the condition that the trajectory only heads towards the "inside" of the funnel.
+A Lyapunov function for an autonomous system $x'=F(x)$ is defined as a scaler function $V:R^n\to R$ such that :
+- $V$ is continuous and has continuous first order partial derivatives.
+- $V>0$ for $\|x\|\le M,x\neq0$, and $V(0)=0$.
+Notice that the derivative of $V$ with respect to $t$ can be written as $$\frac{d}{dt}V(x(t))=\frac{\partial V}{\partial x}\cdot\frac{\partial x}{\partial t}=\nabla V\cdot F(x)$$whose sign exactly measure the angle between $\nabla V$ and $F(x)$. Thus the sign of $\frac{dV}{dt}$ determines whether the equilibrium is source, sink, or other complex situations. We call it the **total derivative of the system**.
+- **Lyapunov stability theorems**
+	- **Stability**: If there exists $V$ such that $\frac{dV}{dt}\le0$, then the singular solution is stable. If the inequality is strict then the solution is asymptotic stable.
+	- **Un-stability**: If there exists $V$ with some point $x^*$ such that $V(x^*)>0(<0)$, further assume that there exists a neighborhood $D$ of $0$ such that $\frac{dV}{dt}$ is positive definite (negative definite), then $0$ is unstable.
+- **Constructing Lyapunov function**: most of the time for a system of dimension $n$ the function $$V=\sum_{i=1}^na_ix_n^2\quad\text{or}\quad V=\sum_{k}p_k(x_1,\cdots,x_n)^2$$would work, where the coefficients $a_i$ or polynomials $p_k$ should be chosen according to the actual problem.
+## Limit cycle
+A periodic solution $x=x(t)$ is called the limit cycle if it's the limit set of some other trajectories.
+- **Stability of limit cycle**
+	- **Stable limit cycle ($\omega$-limit cycle)**: all neighboring trajectories approach the limit cycle as time approaches infinity, i.e., the set of cluster points as $t\to+\infty$.
+	- **Unstable limit cycle ($\alpha$-limit cycle)**: all neighboring trajectories the limit cycle as time approaches negative infinity, i.e., the set of cluster points as $t\to-\infty$.
+	- **Semi-stable limit cycle**: there is a neighboring trajectory which spirals into the limit cycle as time approaches infinity, and another one which spirals into it as time approaches negative infinity.
+	- Note that there are limit cycles belonging to non of the class above.
+- **(Non-)Existence of limit cycle**
+	- **Bendixson-Dulac theorem**: for the system $\frac{dx}{dt}=f(x,y),\frac{dy}{dt}=g(x,y)$, if there exists $\varphi(s,y)\in C^1$ such that $$\frac{\partial(\varphi f)}{\partial x}+\frac{\partial(\varphi g)}{\partial y}$$has the same sign almost everywhere in a simply connected region of the plane, then there is no non-constant periodic solutions lying entirely within the region.
+		- **Proof**: assume that $\frac{\partial(\varphi f)}{\partial x}+\frac{\partial(\varphi f)}{\partial y}>0$. If there exists a closed trajectory $C$ with its interior $D$, then by Stokes's theorem (or Green's theorem) [[Integral Calculus on Smooth Manifold]] $$\begin{align}\int_D\left(\frac{\partial(\varphi f)}{\partial x}+\frac{\partial(\varphi g)}{\partial y}\right)dxdy&=\int_D\left(\frac{\partial(\varphi x')}{\partial x}+\frac{\partial(\varphi y')}{\partial y}\right)\\&=\oint_C\varphi(-y'dx+x'dy)\\&=\oint_C\varphi(-y'x'+x'y')dt=0\end{align}$$which contradicts the assumption. Thus there is no closed trajectory $C$.
+		- In practice we usually first try $\varphi=1$.
+	- **Poincaré-Bendixson theorem**: given a differentiable real dynamical system defined on an open subset of the plane, every non-empty compact $\omega$-limit set of an orbit, which contains only finitely many fixed points, is either: a **fixed point**, a **periodic orbit**, or a connected set (compose of a finite number of fixed points together with homoclinic and heteroclitic orbits connecting these)
