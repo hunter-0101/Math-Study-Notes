@@ -1,0 +1,1 @@
+A general homogeneous **heat equation** is of the form $$u_t-\alpha\Delta u=0$$where $\alpha$ is called the **thermal diffusivity**.

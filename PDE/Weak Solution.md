@@ -1,0 +1,1 @@
+A **weak (generalized) solution** to an ODE/PDE is a function that is, while not smooth enough, indeed a solution in the [[Distribution]] sense. 
