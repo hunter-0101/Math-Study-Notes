@@ -1,0 +1,3 @@
+**Derangement** is a permutation of elements of sets in which no element appears in its original positions. Formally, it refers to any $\sigma\in S_n$ ([[Group Gallery]]) with the property that $$\sigma(i)\neq i,\quad\forall 1\le i\le n$$The number of derangements for $n$ is usually denoted $!n$.
+- **Recurrence relation**: by considering the first two elements to be arranged we have that $$!n=(n-1)(!(n-1)+!(n-2))$$
+- **Explicit formula**: one of the most commonly used formula is that $$!n=n!\sum_{i=0}^n\frac{(-1)^i}{i!}$$which can be shown using the inclusion-exclusion principle ([[Set Theory]]). From this formula we further deduce another recurrence relation $$!n=\begin{cases}1,&n=0\\n\cdot!(n-1)+(-1)^n,&n>0\end{cases}$$

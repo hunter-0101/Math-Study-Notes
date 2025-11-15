@@ -1,0 +1,18 @@
+For $f(x)$ differentiable we define:
+- **Forward difference**: $\Delta_h f(x)=f(x+h)-f(x)$, and more generally $$\Delta_h^nf(x)=\sum_{i=0}^n(-1)^{n-i}C_n^if(x+ih)$$We have $\frac{\Delta_hf(x)}{h}-f'(x)=o(h),h\to0$. Usually we denote $\Delta_1=\Delta$.
+- **Backward difference**: $\nabla_h f(x)=f(x)-f(x-h)$, and more generally $$\nabla_h^nf(x)=\sum_{i=0}^n(-1)^iC_n^if(x-ih)$$We have $\frac{\nabla_hf(x)}{h}-f'(x)=o(h),h\to0$. Usually we denote $\nabla_1=\nabla$. 
+- **Central difference**: $\delta_hf(x)=f(x+\frac{h}{2})-f(x-\frac{h}{2})$, and more generally $$\delta_h^nf(x)=\sum_{i=0}^n(-1)^iC_n^if\left(x+\left(\frac{n}{2}-i\right)h\right)$$We have $\delta_hf(x)-f'(x)=o(h^2,h\to0)$.
+- **Falling factorial**: $x^\underline n=x(x-1)\cdots(x-n+1)$. Rising factorial is similar, with general forms $$x^{\underline n}=\frac{\Gamma(x+1)}{\Gamma(x-n+1)},\quad x^{\overline n}=\frac{\Gamma(x+n)}{\Gamma(x)}$$extending the definition to any $x,x+n\in\mathbb R\backslash\mathbb Z_-$.
+## Bridge between umbral and differential calculus
+Define a map $\phi:x^n\mapsto x^\underline n$, then we could notice that $\phi\mathcal Df(x)=\Delta\phi f(x)$, i.e., $$\Delta=\phi\mathcal D\phi^{-1},\quad\Sigma=\phi\mathcal I\phi^{-1}$$This yields the following commuting diagram $$\begin{CD}x^n@>\mathcal D>>nx^{n-1}\\@V{\phi}VV@V\phi VV\\x^{\underline n}@>>\Delta>nx^{\underline{n-1}}\end{CD}$$The fact that this intuitive correspondence is valid is mainly due to the identity of commutators $\left[\frac{\Delta_h}{h},xT_h^{-1}\right]=[\mathcal D,x]=I$. 
+- **Relation between $\Delta$ and $\mathcal D$**: if we take the view $\Delta_h=T_h-I$ where $T_h:f(x)\mapsto f(x+h)$ as an operator, then formally apply Taylor series w.r.t $h$ we can deduce that $$\Delta_h=h\mathcal D+\frac{1}{2!}h^2\mathcal D^2+\cdots=e^{h\mathcal D}-I$$This expansion is valid when both sides act on analytic functions, for sufficiently small $h$.
+- **Difference rule**: we have the following rules as analogy to those in [[Differential Calculus on Euclidean Space]]:
+	- **Linearity**: $\Delta(af+bg)=a\Delta f+b\Delta g$.
+	- **Product rule**: $\Delta(fg)=f\Delta g+g\Delta f+\Delta f\Delta g$, and $\nabla(fg)=f\nabla g+g\nabla f-\nabla f\nabla g$.
+	- **Quotient rule**: $\nabla\left(\frac{f}{g}\right)=\frac{g\nabla f-f\nabla g}{g\cdot(g-\nabla g)}$.
+	- **Summation rule**: $\sum_{n=a}^b\Delta f(n)=f(b+1)-f(a)$ or $\sum_{n=a}^b\nabla f(n)=f(b)-f(a-1)$. More generally we have the analogies to **fundamental theorems of calculus** as $\Delta(\sum g)=g$ and $(\sum\Delta f)(a+nh)=f(a+nh)-f(a)$.
+## Newton series
+If we apply the $\phi$ on both sides of the Taylor series ([[Differential Calculus on Euclidean Space]]) we'll get $$f(x)=\sum_{n=0}^\infty\frac{\Delta^nf(a)}{n!}(x-a)^{\underline n}=\sum_{n=0}^\infty C_{x-a}^n\Delta^nf(a)$$This is valid for all polynomials and many (but not all) analytic functions.
+- **Intuition**: in Taylor series we use the value of derivatives of different order to "guess" how the function would behave near some point, and this is based on the hope that the function can be approximated by polynomials as long as its degree increase. For Newton series, as a discrete analogy, we're also hoping that the list function also behaves similar to falling factorial, and use the "sample point" as information to "guess" its future behavior.
+	- **Difference as filtration**: since $\frac{d^k}{dx^k}\sum a_nx^n|_0=k!a_k$, differentiation serves as a filter that extracts the coefficient $a_k$ out from the polynomial. The key idea also applies to the discrete analogy, since $\Delta^k\sum a_nx^{\underline n}|_0=k!a_k$.
+	- This "guess" is exactly what we do in polynomial [[Polynomial Interpolation]].

@@ -1,0 +1,10 @@
+- A curve $\alpha(t)$ is **regular** if $\alpha'(t)\neq0,\forall t$.
+- **Arc length**: for a curve $\alpha:I\to R^n$, the length is given by $$L(\alpha)=\int_I\|f'(t)\|_2dt$$This definition and formula is well-defined due to integration by substitution.
+	- Through this we can proof that the straight line is the shortest (use the inequality $\|\alpha'\|_2\ge\alpha'\cdot v$ for any unit vector $v$).
+- **Curves parametrized by arc length**: refers to curves such that $\|\alpha'(s)\|=1,\forall t\in I$. We will denote $\alpha'(s)=t(s)$
+	- $\|\alpha''(s)\|=k(s)$ is referred to as the **curvature** of $\alpha$ at $s$. It measures the rate of change of angle.
+	- $\|\alpha''(s)\|/k(s)=n(s)$ is the **normal vector** at $s$. The plan determined by $\alpha(s),n(s)$ is called the **osculating plane** at $s$. 
+	- Points where $k(s)=0$ is called singular point of order $1$.
+	- $b(s)=t(s)\wedge n(s)$ is called the **binormal vector**. The norm $\|b'(s)\|$ measure the rate of change of the neighboring osculating planes with the osculating plane at $s$.
+	- It can be verified that $b'(s)$ is parallel to $n(s)$. let $b'(s)=\tau(s)n(s)$, then the value $\tau(s)$ is called the **torsion** of $\alpha$ at $s$.
+		- For a $\alpha$ with no singular point of order 1, $\alpha$ is a plane curve iff $\tau\equiv0$.

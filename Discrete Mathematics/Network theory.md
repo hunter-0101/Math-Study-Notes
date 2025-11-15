@@ -1,0 +1,4 @@
+Given a directed [[Graph]] $G=(V,E)$, denote $N_i$ the neighborhood of $v_i$, $k_i$ the total degree of $v_i$ and $e_{ij}$ the edge from $v_i$ to $v_j$.
+- **Clustering coefficient**: the **local clustering coefficient** for $G$ is $$C_i=\frac{\#\set{e_{jk}:v_j,v_k\in N_i,e_{jk}\in E}}{k_i(k_i-1)}$$For undirected graph we only need to multiply $2$ on RHS. The global clustering coefficient is $$C=\frac{\text{number of closed triplets}}{\text{number of all triplets (open and closed)}}$$where a triplet refers to a triple $(v_i,v_j,v_k)$ with $e_{ij},e_{jk}\in E$.
+## Small-world network
+Intuitively, a small-world network is characterized by a high clustering coefficient and low distances between vertices. Formally, denote $L$ the distance between two vertices, then a small-world network id defined to be a graph s.t. the [[Expectation]] $$EL\propto\ln N,\quad N\text{ large}$$while the global clustering coefficient is not small.

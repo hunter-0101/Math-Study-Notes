@@ -1,0 +1,3 @@
+A 3D surface $S$ can be described by $S\ni(x,y,z)=(x(s,t),y(s,t),z(s,t))$ or $F(x,y,z)=0$.
+- **Normal vector**: for $\tau(s,t)=(x(s,t),y(s,t),z(s,t))$ we have $$\vec n=\frac{\partial\tau}{\partial s}\times\frac{\partial\tau}{\partial t}=\left(\frac{\partial(y,z)}{\partial(s,t)},\frac{\partial(z,x)}{\partial(s,t)},\frac{\partial(x,y)}{\partial(s,t)}\right)^T$$For $F(x,y,z)=0$, we have $$\vec n=\nabla F$$From this we can obtain the expression for tangent plane.
+	- **Intuition**: similar to [[Curve]], the determinantal forms measures the rate of change of the area spanned by $y,z$ given a small change in $s,t$. This value is exactly how much $x$ need to change to balance the overall volume, hence serves as the coefficient for $x$.
