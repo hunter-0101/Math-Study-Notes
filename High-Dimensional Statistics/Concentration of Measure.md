@@ -1,0 +1,5 @@
+Given $\phi:\mathbb R\to\mathbb R$ a convex ([[Convexity]]) function, and define the **$\phi$-entropy** as a functional on the space of probability distributions $$H_\phi(X)=E\phi(X)-\phi(EX)\where X\sim P$$By Jensen's inequality we have $H_\phi(X)\ge0$. Note that it's essentially a function of probability [[Distribution]] rather than [[Random Variable]].
+- **Relation with Shannon entropy**: in [[Entropy & Information]] the Shannon entropy is defined as $$H(X)=-E\ln p(X)$$If we assume that $EX=1$, then obviously the classic Shannon entropy can be recovered by picking $\phi(x)=-\ln x$.
+## Entropic method
+Below we assume that $\phi(x)=x\ln x$. For any $Z\ge0$ we'll have $$H(Z)=E(Z\ln Z)-EZ\ln EZ$$
+- **Herbst argument**: suppose that the entropy satisfies $$H\exp(\lambda X)\le\frac{1}{2}\sigma^2\lambda^2\varphi_X(\lambda),\quad\forall\lambda\in I$$where $\sigma>0$ and $I$ is either $[0,\infty)$ or $\mathbb R$, then $X$ satisfies the bound $$\ln E\exp(\lambda(X-EX))\le\frac{1}{2}\lambda^2\sigma^2,\quad\forall\lambda\in I$$**Proof**: 
