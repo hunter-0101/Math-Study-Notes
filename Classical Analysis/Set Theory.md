@@ -6,12 +6,12 @@ Discussion in this note assumes metric space. For more general content see [[Poi
 	- $E = \overline{E}$.
   The **closure** of E is defined as $\overline{E}=E\cup E'=\operatorname{int}(E)\cup \partial E$.
 - **Power set**: given $X$ define its power set as the family of its subset: $$2^X=\set{A\subset X}$$This is sometimes denoted as $\mathcal P(X)$.
-	- **Closeness under set operations**: for $\mathcal A\subset 2^X$ we define the following concepts:
-	  - **$\cap$-closeness**: $A,B\in\mathcal A\Longrightarrow A\cap B\in\mathcal A$.
-	  - **$\cup$-closeness**: $A,B\in\mathcal A\Longrightarrow A\cup B\in\mathcal A$.
-	  - **$\backslash$-closeness**: $A,B\in\mathcal A\Longrightarrow A\backslash B\in\mathcal A$.
-	  - **Closeness under complement**: $A\in\mathcal A\Longrightarrow A^C\in\mathcal A$.
-	  For $\sigma$-closeness we just modify the above operations to countable ones.
+	- **Closedness under set operations**: for $\mathcal A\subset 2^X$ we define the following concepts:
+	  - **$\cap$-closedness**: $A,B\in\mathcal A\Longrightarrow A\cap B\in\mathcal A$.
+	  - **$\cup$-closedness**: $A,B\in\mathcal A\Longrightarrow A\cup B\in\mathcal A$.
+	  - **$\backslash$-closedness**: $A,B\in\mathcal A\Longrightarrow A\backslash B\in\mathcal A$.
+	  - **Closedness under complement**: $A\in\mathcal A\Longrightarrow A^C\in\mathcal A$.
+	  For $\sigma$-closedness we just modify the above operations to countable ones.
 - **De Morgan's law**: given a family of subsets $\set{A_\alpha}_{\alpha\in I}$ of total set $S$ we have $$\left(\bigcup_{\alpha\in I} A_\alpha\right)^C=\bigcap_{\alpha\in I}A_\alpha^C,\quad\left(\bigcap_{\alpha\in I} A_\alpha\right)^C=\bigcup_{\alpha\in I}A_\alpha^C$$this can be shown via two-sided inclusion.
 - **Inclusion-exclusion principle**: given sets $A_i\subset S,1\le i\le n$ we have $$\left|\bigcup_{i=1}^nA_i\right|=\sum_{\varnothing\neq J\subset[n]}(-1)^{|J|+1}\left|\bigcap_{j\in J}A_j\right|$$which can be shown via a simple induction. Its useful complementary form $$\left|\bigcap_{i=1}^nA_i^C\right|=\left|S-\bigcup_{i=1}^nA_i\right|=|S|-\sum_{\varnothing\neq J\subset[n]}(-1)^{|J|+1}\left|\bigcap_{j\in J}A_j\right|$$which uses the De Morgan's law.
 - **limit**: formally we define $$\limsup E_n=\bigcap_{j=1}^\infty\bigcup_{k=j}^\infty E_n,\quad\liminf E_n=\bigcup_{j=1}^\infty\bigcap_{k=j}^\infty E_n$$Intuitively, $\limsup E_n$ contains elements that appears in infinitely many $E_n$, while $\liminf E_n$ contains elements that is only absent in finitely many $E_n$.
@@ -40,9 +40,9 @@ Note that an algebra is sometimes referred to as a field, in particular in proba
 ## $\sigma$-Ring
 Given a set $\Omega$ we denote $2^\Omega$ its power set, and define the following concepts:
 - **Ring**: a class $\mathcal A\subset 2^\Omega$ is called a ring if it's closed under finite union and difference.
-	- **$\cap$-closeness**: notice that $A\backslash(A\backslash B)=A\cap B$, hence $\backslash$-closeness immediately produces $\cap$-closeness.
+	- **$\cap$-closedness**: notice that $A\backslash(A\backslash B)=A\cap B$, hence $\backslash$-closedness immediately produces $\cap$-closedness.
 - **$\sigma$-Ring**: a ring is further a $\sigma$-ring if it's $\sigma$-$\cup$-closed.
-	- **$\sigma$-$\cap$-closeness**: $\sigma$-ring is also $\sigma$-$\cap$-closed, since by De Morgan's law we have $$\bigcap_{n\in\mathbb N}A_n=\bigcap_{n=1}^\infty(A_0\cap A_n)=\bigcap_{n=1}^\infty A_0\backslash(A_0\backslash A_n)=A_1\left\backslash\bigcup_{n=1}^\infty(A_1\backslash A_n)\right.\in\mathcal A$$We can further induce that any countable union of sets can be expressed as countable disjoint union of sets in $\mathcal A$.
+	- **$\sigma$-$\cap$-closedness**: $\sigma$-ring is also $\sigma$-$\cap$-closed, since by De Morgan's law we have $$\bigcap_{n\in\mathbb N}A_n=\bigcap_{n=1}^\infty(A_0\cap A_n)=\bigcap_{n=1}^\infty A_0\backslash(A_0\backslash A_n)=A_1\left\backslash\bigcup_{n=1}^\infty(A_1\backslash A_n)\right.\in\mathcal A$$We can further induce that any countable union of sets can be expressed as countable disjoint union of sets in $\mathcal A$.
 ## Borel set
 **Borel set** is any set within the Borel algebra ([[Measure]]), i.e., can be formed from open sets through countable union, countable intersection, and complement.
 - **$F_\sigma,G_\delta$ sets**: an $F_\sigma$ set is a countable union of closed sets, and $G_\delta$ set is a countable intersection of open sets.

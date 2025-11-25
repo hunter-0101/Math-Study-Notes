@@ -13,7 +13,7 @@ Assuming **axiom of choice** ([[Set Theory]]), the cardinality of a set $X$, den
 	- If $|X|\ge |\mathbb{R}|$, then $X$ is **uncountable**. Here $|\mathbb{R}|=c$ is the **cardinality of the continuum**. We have $|\mathcal{P}(\mathbb{N}))|=2^{\aleph_0}=\mathfrak c$.
 	- **Continuum hypothesis**: the hypothesis says that $\aleph_1=2^{\aleph_0}$. This is independent of ZFC, i.e., neither itself nor its negation can be proved provided that ZCF is consistent.
 - **[[Set Theory]] operations**
-	- **Union**: given $A_n$ countable for all $n\in\mathbb N$, then $\bigcup_{n\in\mathbb N}A_n$ is also countable. This is obvious by the re-indexing $a_{ij}$ and use a zig-zag path.
+	- **Union**: given $A_n$ countable for all $n\in\mathbb N$, then $\bigcup_{n\in\mathbb N}A_n$ is also countable. This is obvious by the re-indexing $a_{ij}$ and going over the union along a zigzag path.
 	- **Power**: $\mathbb N^\mathbb N=\mathfrak c$.
 - **Examples of (un)countability**
 	- Let $E\subset \mathbb R^d$ s.t. $d(x,y)\in\mathbb Q,\forall x,y\in E$, then $E$ is at most countable. 
