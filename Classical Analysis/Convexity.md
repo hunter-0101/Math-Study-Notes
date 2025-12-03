@@ -1,5 +1,7 @@
-Given $V$ a [[Vector Space]] over some ordered [[Field]], a subset $C\subset V$ is **convex** if $$(1-t)x+ty\in C,\quad\forall x,y\in C,t\in[0,1]$$We say that $C$ is **strictly convex** if the above expression is in the topological interior ([[Point Set Topology]]) of $C$.
+Given $V$ a [[Vector Space]] over some ordered [[Field]], a subset $C\subset V$ is **convex** if $$(1-t)x+ty\in C,\quad\forall x,y\in C,t\in[0,1]$$We say that $C$ is **strictly convex** if the above expression is in the topological interior ([[Topological Space]]) of $C$.
 - **Convex hull**: the convex hull of $A\subset V$ is defined as the smallest convex set containing $A$: $$\conv A=\bigcap_{A\subset C\subset V,C\text{ convex}}C$$Equivalently, it's the set of all convex combinations of points in $A$.  
+- **Supporting hyperplane**: a supporting hyperplane of a convex $C$ is a [[Hyperplane]] $H$ s.t. $C$ is entirely contained in one of the two closed half-spaces bounded by $H$, and $S$ has at least one boundary-point on $H$. 
+	- **Discussion**: while supporting hyperplane could exists for general subset of a vector space, we're mostly interested in those of convex sets due to practical purposes and their good properties. 
 ## Convex function
 Given $X$ a convex subset of real vector space, and $f:X\to\mathbb R$ a function. $f$ is called **convex** iff $$f(tx_1+(1-t)x_2)\le tf(x_1)+(1-t)f(x_2),\quad\forall x_1,x_2\in X,t\in[0,1]$$We can define **strict convexity** similarly. $f$ is **concave** if $-f$ is convex. 
 - **Arithmetic property**

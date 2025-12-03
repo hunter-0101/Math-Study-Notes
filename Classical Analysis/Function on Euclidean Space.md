@@ -6,7 +6,7 @@ Given an open subset $\Omega\subset\mathbb R^d$ equipped with the ordinary Eucli
 	- **Existence of limit**: it might happen that $\limsup f/g>\liminf f/g$ given $f=O(g)$, since in definition we're only restricting the upper limit.
 	- **Asymptotic equivalence**: when $f(x)/g(x)\to1$ we write $f\sim g$.
 ## Continuity
-Note that in [[Point Set Topology]] there is a more general definition using openness.
+Note that in [[Topological Space]] there is a more general definition using openness.
 We say that $f:\Omega\to \mathbb{R}^n$ is **continuous** at $x_0\in\Omega$ if $$\lim_{x\to x_0}f(x)=f(x_0)$$We say that $f$ is continuous on $\Omega$ if it's continuous at every point of $\Omega$. Set of such functions is denoted $C(\Omega)$. Similarly we can define $C(\overline\Omega)$ for closed set $\overline\Omega$.
 - **[[Banach Space]] structure**: $C(\overline\Omega)$ is Banach under the norm $\|f\|_{C(\overline\Omega)}=\|f\|_\infty$ ([[Lp Space]]), since uniform limit of continuous function on compact set is also continuous, as discussed below.
 - **Oscillation**: oscillation of a function on open $E$ and at a point $x$ are defined as $$\omega_f(E)=\diam(f(E)),\quad\omega_f(x)=\lim_{r\searrow 0}\omega_f(B(x,r))$$Continuity at $x$ is equivalent to $\omega_f(x)=0$.

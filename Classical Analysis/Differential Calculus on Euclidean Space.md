@@ -44,7 +44,7 @@ The gradient of $f:\mathbb R^n\to\mathbb R$ is defined as $$\nabla =\begin{bmatr
 - **Algebraic operations**
 	- **Product**: $\nabla(fg)=f\nabla d+g\nabla f$.
 	- **Chain rule**: similar to the case of single variable, we have $$\nabla(f\circ g)(c)=\Big(J_g(c)\Big)^T\nabla f(a)$$where $a=g(c)$, and $J_g$ the Jacobian matrix. 
-- **Directional derivative**: given $|\mathbf v|=1$ define $\frac{\partial f}{\partial\mathbf v}(x)=\braket{\nabla f(x),\mathbf{v}}$.
+- **Directional derivative**: given $\|v\|=1$ we define $$\frac{\partial f}{\partial v}(x)=\lim_{t\to0}\frac{f(x+t v)-f(x)}{t}$$By denoting $v=(v_1,\cdots,v_n)$ and use a difference telescoping we can verify that $$\frac{\partial f}{\partial v}=\braket{\nabla f,v}$$which is useful in many cases.
 - **Laplace operator**: define $$\Delta=\nabla\cdot\nabla,\quad\Delta f=\nabla\cdot\nabla f=\sum_i\partial_{ii}f$$Arithmetic properties of this operator can be derived directly from definition. More can be found in [[Harmonic function]].
 ## Vector-valued: $f:\mathbb R^n\to\mathbb R^m$
 In this case the gradient become a matrix, called the **Jacobian matrix** $$J_f=\begin{bmatrix}\frac{\partial f}{\partial x_1}&\cdots&\frac{\partial f}{\partial x_n}\end{bmatrix}=\begin{bmatrix}\frac{\partial f_1}{\partial x_1}&\cdots&\frac{\partial f_1}{\partial x_n}\\\vdots&\ddots&\vdots\\\frac{\partial f_m}{\partial x_n}&\cdots&\frac{\partial f_m}{\partial x_n}\end{bmatrix}$$The local linear approximation is $f(x+\Delta x)=f(x)+J_f(x)^T\Delta x+o(\Delta x)$.

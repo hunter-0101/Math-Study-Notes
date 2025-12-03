@@ -1,4 +1,4 @@
-Discussion in this note assumes metric space. For more general content see [[Point Set Topology]]. Some related topics can be found in [[Cardinality]].
+Discussion in this note assumes metric space. For more general content see [[Topological Space]]. Some related topics can be found in [[Cardinality]].
 - $B_E(a,\delta):=\{x\in E|d(a,x)<\delta\}$ is a *ball*, $S_E(a,\delta):= \{x\in E|d(a,x)=\delta\}$ is a *sphere*.
 - **Open set**: $G$ is open if any point of $G$ is an interior point of $G$.
 - **Closed set**: $F$ is closed can be defined as:
