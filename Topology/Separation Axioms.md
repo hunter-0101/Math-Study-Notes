@@ -1,4 +1,4 @@
-There are several **separation axioms** used in [[Point Set Topology]] for distinguishing to what extend two points in a topological space $X$ can be separated. The following separation axioms are listed in strengthening order. Note that for $T_3,T_4$ we require all one-point sets to be closed.
+There are several **separation axioms** used in [[Topological Space]] for distinguishing to what extend two points in a topological space $X$ can be separated. The following separation axioms are listed in strengthening order. Note that for $T_3,T_4$ we require all one-point sets to be closed.
 - **$T_1$ axiom**: given distinct $x_1,x_2\in X$ there exists open set s.t. $x_1\in U,x_2\notin U$ and vise versa.
 	- **Equivalent characterization**: every finite point set is closed.
 	- **Example**: co-finite topology of $\mathbb R$ is $T_1$, but not Hausdorff, since any pair of open sets will eventually overlap near infinity.
