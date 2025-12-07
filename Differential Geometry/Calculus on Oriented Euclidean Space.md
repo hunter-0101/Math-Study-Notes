@@ -19,7 +19,7 @@ The **cotangent space** $T_p^*M$ (i.e., dual space of $T_pM$) consists of covect
 	- **Algebra of exterior differential form**: with wedge product as multiplication and degree of form as grading, the direct sum $$\Omega(U)=\bigoplus_{k=0}^\infty\Omega^k(U)$$forms a anti-commutative graded algebra over $\mathbb R$.
 - **Exterior derivative**: in general for $\omega=\sum a_Idx_I\in\Omega^k(U)$ we define $d:\Omega^k\to\Omega^{k+1}$ by $$d\omega=\sum_Ida_I\wedge dx^I=\sum_I\left(\sum_j(\partial_j a_I)dx^j\right)\wedge dx^I\in\Omega^{k+1}(U)$$
 	- **Anti-derivation of degree $1$**: we have that $$d(\omega\wedge\tau)=d\omega\wedge\tau+(-1)^{\deg\omega}\omega\wedge d\tau$$by the above coordinate expression.
-	- **Closeness**: $d^2=0$, since in the resulting summation $dx^i\wedge dx^i=0$ while $dx^i\wedge dx^j$ has its alternating counterpart that cancels it out. 
+	- **Closedness**: $d^2=0$, since in the resulting summation $dx^i\wedge dx^i=0$ while $dx^i\wedge dx^j$ has its alternating counterpart that cancels it out. 
 	- $(df)(X)=Xf$ by definition.
 	- **Characterization of exterior derivative**: if $D:\Omega^k\to\Omega^{k+1}$ is anti-derivation of degree $1$, is closed, and $(Df)(X)=Xf$, then $D=d$.
 	  **Proof**: it suffices to show that $D(fdx^I)=d(fdx^I)$ for all $I=(i_1<\cdots<i_k)$. By $$(Df)(X)=Xf=df(X),\quad\forall F\in C^\infty$$we have $Df=df$, while a simple induction with anti-derivation property shows that $D(dx^I)=0$, hence $$D(fdx^I)=Df\wedge dx^I+fD(dx^I)=df\wedge dx^I=d(fdx^I)$$which complete the proof.
