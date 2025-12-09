@@ -12,4 +12,4 @@ All integral operator $T$ with kernel $K$ satisfying $K\in L^2(\mathbb R^d\times
 - **Norm**: $\|T\|\le\|K\|_2$.
   **Proof**: by Fubini's theorem for $\ae x$ the function $y\mapsto |K(x,y)|^2$ is integrable, hence by Cauchy-Schwarz inequality $y\mapsto K(x,y)f(y)$ is integrable for $\ae x$. Further by C-S inequality we have $\|Tf\|_2^2\le\|K\|_2^2\|f\|_2^2$, hence $\|T\|\le\|K\|_2$.
 - Kernel of $T^*$ is $\overline{K(y,x)}$ by Fubini's theorem.
-- **Compactness**: the compact follows directly from the fact that $T$ is an Hilbert-Schmidt operator, considering the expansion of $K(x,y)$ under the basis $\set{\phi_{kj}(x,y)=\phi_k(x)\phi_j(y)}$ where $\phi_k$ is any orthonormal basis of $L^2$. [[Operator]]
+- **Compactness**: the compact follows directly from the fact that $T$ is an Hilbert-Schmidt operator, considering the expansion of $K(x,y)$ under the basis $\set{\phi_{kj}(x,y)=\phi_k(x)\phi_j(y)}$ where $\phi_k$ is any orthonormal basis of $L^2$. [[Operator on Hilbert Space]]

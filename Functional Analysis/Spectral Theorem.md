@@ -1,8 +1,8 @@
-**Motivation**: in [[Eigendecomposition]] we've observed that unitary matrices can be diagonalized via eigenvectors. This idea is generalized to bounded linear [[Operator]] that preserves its key idea.
+**Motivation**: in [[Eigendecomposition]] we've observed that unitary matrices can be diagonalized via eigenvectors. This idea is generalized to bounded linear [[Operator on Hilbert Space]] that preserves its key idea.
 
 ---
 ## Spectral theorem for compact self-adjoint operator
-- **Spectrum of compact self-adjoint operator**: for $T$ compact self-adjoint on separable $\mathcal H$ we have the following results concerning its spectrum [[Operator]]:
+- **Spectrum of compact self-adjoint operator**: for $T$ compact self-adjoint on separable $\mathcal H$ we have the following results concerning its spectrum [[Operator on Hilbert Space]]:
 	- **Eigenvalues**: all eigenvalues are real, by conjugate symmetry of inner product, and eigenvalues are at most countable by the following result.
 	- **Eigenvectors**: eigenvectors of different eigenvalues are orthogonal, and $\dim\ker(T-\lambda I)$ is finite. Moreover, $\dim\bigoplus_{|\lambda|>\mu}\ker(T-\lambda I)$ is finite for any $\mu>0$, otherwise contradicting compactness. 
 	- Either $\|T\|$ or $-\|T\|$ is an eigenvalue of $T$. This is where we utilize compactness.
@@ -22,7 +22,7 @@ A **spectral resolution** is a function $\lambda\mapsto E(\lambda)$ from $\mathb
 3. $E(\lambda)$ is right continuous in the sense that $E(\mu)f\to E(\lambda)f$ as $\mu\searrow\lambda$.
 Notice that given $\lambda<\mu$ we have $$1\iff\im E(\lambda)\subset\im E(\mu)\iff E(\mu) E(\lambda)=E(\lambda)\iff E(\mu)-E(\lambda)\text{ is an orthogonal projection}$$Denote $F(\lambda)=\braket{E(\lambda)f,g}$ given $f,g$, then since $\lambda\mapsto\|E(\lambda)f\|^2$ is also increasing by polarization identity ([[Hilbert Space]]) we have $F(\lambda)\in BV$ and is right continuous.
 - **Positive operator**: symmetric $T$ is said to be positive, written as $T\ge0$, if $\braket{Tf,f}\ge0,\forall f\in\mathcal H$. We write $T_1\ge T_2$ If $T_1-T_2\ge0$. Below we denote $a=\min\braket{Tf,f},b=\max\braket{Tf,f},\|f\|=1$.
-	- **Boundedness**: for $T$ symmetric, $\|T\|\le M\iff -MI\le T\le MI$, hence $\|T\|=\max(|a|,|b|)$. This follows directly from property of symmetric [[Operator]].
+	- **Boundedness**: for $T$ symmetric, $\|T\|\le M\iff -MI\le T\le MI$, hence $\|T\|=\max(|a|,|b|)$. This follows directly from property of symmetric [[Operator on Hilbert Space]].
 	- **Square root**: for $T\ge0$ there exists symmetric $S$ s.t. $S^2=T$ and $S$ commutes with any operator that commutes with $T$. We denote $S=T^{1/2}$.
 	  **Proof**: by [[Differential Calculus on Euclidean Space]] we have $(1-t)^{1/2}=\sum(-1)^n\binom{1/2}{n}t^n,|t|\le1$. By multiplying a constant we may assume that $\|T\|\le1$, hence we can define $$S=\sum_{n\in\mathbb N}(-1)^n\binom{1/2}{n}(I-T)^n$$The convergence is guaranteed by absolute convergence of expansion of $(1-t)^{1/2}$, and we can also verify that $\|S_n^2-T\|\to0$. Hence we get $S^2=T$. Any $A$ that commutes with $T$ also commutes with all its polynomials, hence $AS_n=S_nA$, hence $AS=SA$.
 	- For $T_1,T_2\ge0,T_1T_2=T_2T_1$ we have $T_1T_2\ge0$.

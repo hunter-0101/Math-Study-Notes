@@ -1,4 +1,4 @@
-**Intuition**: holomorphic functional calculus is a generalization of [[Holomorphic Function]] and [[Contour Integral]] to [[Operator]], in the way that images of a function is allowed to take value from a Banach algebra (consisting of operators). 
+**Intuition**: holomorphic functional calculus is a generalization of [[Holomorphic Function]] and [[Contour Integral]] to [[Operator on Hilbert Space]], in the way that images of a function is allowed to take value from a Banach algebra (consisting of operators). 
 
 ---
 Given a [[Banach Algebra]] $A$ over $\mathbb C$ and $f:U\to A$ where $U\subset\mathbb C$ is open, we say that $f$ is 
