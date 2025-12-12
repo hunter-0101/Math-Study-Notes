@@ -27,7 +27,7 @@ For $p\in S$ there are a family of normal planes $\pi\perp T_pS$. The first curv
 		- **Parabolic point**: $K=0$ with one principal curvature being non-zero, at which the quadratic approximation is a cylinder.
 		- **Planer point**: $K=0$ with two principal curvature being $0$, at which the quadratic approximation is the tangent plane.  
 - **Mean curvature**: the mean curvature, literally, is defined as $$H=\frac{1}{2}\tr S=\frac{\kappa_1+\kappa_2}{2}=\frac{1}{2}\frac{EN-2FM+GL}{EG-F^2}$$It's an extrinsic property of the surface, and can also be defined as $$H=\frac{1}{2\pi}\int_0^{2\pi}\kappa(\theta)d\theta$$where $\kappa(\theta)$ is the signed curvature.
-	- **Minimal surface**: a surface is minimal iff $H=0$ at all points. This is equivalent to the surface being the critical points of th area functional. 
+	- **[[Minimal Surface]]**: a surface is minimal iff $H=0$ at all points. This is equivalent to the surface being the critical points of th area functional. 
 ## Example: catenoid
 Consider the catenoid defined by $$X(u,v) = (\cosh u \cos v, \cosh u \sin v, u)$$Below we go over the standard procedure of calculating its various properties. 
 - **Partial derivatives**: by direct calculation we have that $$\begin{align}X_u&= \frac{\partial X}{\partial u} = (\sinh u \cos v, \sinh u \sin v, 1)\\X_v &= \frac{\partial X}{\partial v} = (-\cosh u \sin v, \cosh u \cos v, 0)\end{align}$$Accordingly, the second order partial derivatives are given by $$\begin{align}X_{uu}&= \frac{\partial^2 X}{\partial u^2} = (\cosh u \cos v, \cosh u \sin v, 0)\\ X_{uv}&= \frac{\partial^2 X}{\partial u \partial v} = (-\sinh u \sin v, \sinh u \cos v, 0)\\X_{vv} &= \frac{\partial^2 X}{\partial v^2} = (-\cosh u \cos v, -\cosh u \sin v, 0)\end{align}$$
