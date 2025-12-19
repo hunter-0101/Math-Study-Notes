@@ -25,9 +25,10 @@ Hensel's Lemma provides a crucial tool for lifting roots from the residue field 
     2. $f'(a_0) \not\equiv 0 \pmod{p}$
   Then there exists a unique root $\alpha \in \mathbb Z_p$ of $f(X)$ such that $\alpha \equiv a_0 \pmod{p}$.
 This means if a polynomial has a simple root modulo $p$, it has a unique $p$-adic root that can be found iteratively.
-### Extra Tools: Squares in $\mathbb Q_p$
-The problem of determining whether an element $a \in \mathbb Q_p$ is a square ($x^2=a$) is an important application of $p$-adic analysis.
-- **Criterion for $a \in \mathbb Q_p^\times$ to be a square**: let $a = p^k u$, where $u \in \mathbb Z_p^\times$ and $k \in \mathbb Z$. Then $a$ is a square in $\mathbb Q_p$ if and only if:
-    1. $k$ is even (i.e., $\nu_p(a)$ is even), **AND**
-    2. $u \equiv y^2 \pmod{4p}$ for some $y \in \mathbb Z$, for $p=2$, OR
-    3. $u$ is a quadratic residue modulo $p$, for $p \neq 2$.
+### Extra discussion
+- **Square root in $\mathbb Q_p$**: The problem of determining whether an element $a \in \mathbb Q_p$ is a square ($x^2=a$) is an important application of $p$-adic analysis.
+	- **Criterion for $a \in \mathbb Q_p^\times$ to be a square**: let $a = p^k u$, where $u \in \mathbb Z_p^\times$ and $k \in \mathbb Z$. Then $a$ is a square in $\mathbb Q_p$ if and only if:
+	    1. $k$ is even (i.e., $\nu_p(a)$ is even), **AND**
+	    2. $u \equiv y^2 \pmod{4p}$ for some $y \in \mathbb Z$, for $p=2$, OR
+	    3. $u$ is a quadratic residue modulo $p$, for $p \neq 2$.
+- **Geometric series**: by completeness of $\mathbb Q_p$ we know (by [[Banach Space]]) that $$|r|_p<1\imply\sum_{n\in\mathbb N}r^n\text{ converges}$$and due to the difference in behavior between $|\cdot|_p$ and $|\cdot|_\infty$, some geometric series that diverges in $(\mathbb R,|\cdot|_\infty)$ would converge in $(\mathbb Q_p,|\cdot|_p)$. For instance, in $\mathbb Q_3$ we have that $$\sum_{n\in\mathbb N}3^n=\frac{1}{1-3}=-\frac{1}{2}$$This provides an interesting illustrative example of how the measure of magnitude differs between these two metrics. 
