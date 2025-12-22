@@ -1,16 +1,16 @@
 A **ring** is a tuple $(R,+,\cdot)$ of a set $R$ and two binary operations $+,\cdot:R\times R\to R$ satisfying:
 1. **Group structure**: $(R,+)$ is an abelian group, and $(R,\cdot)$ is a monoid. [[Group]]
-2. **Distributivity**: $+$ is distributive w.r.t $\cdot$.
-By definitions additive and multiplicative identities $0,1$ are unique. Some authors do not require existence of multiplicative identity in the definition of ring, which we'll refer to as a **rng** in this vault. We say that $R$ is commutative if $\cdot$ is commutative, which is assumed in most cases.
-- **Divisor**: for $ax=b$ we call $a$ a **left divisor** of $b$, and $b$ a **right multiple** of $a$. Similarly we can define right divisor and left multiple. A divisor that is both a left and right divisor is called a **two-sided divisor**. 
+2. **Compatibility (distributivity)**: $+$ is distributive w.r.t $\cdot$.
+By definitions additive and multiplicative identities $0,1$ are unique. Some authors do not require **existence of multiplicative identity** in the definition of ring, which we'll refer to as a **rng** in this vault. We say that $R$ is commutative if $\cdot$ is commutative, which is assumed in most cases.
+- **Divisor**: for $ax=b$ we call $a$ a **left divisor** of $b$, and $b$ a **right multiple** of $a$, denoted $a\mid b$. Similarly we can define right divisor and left multiple. A divisor that is both a left and right divisor is called a **two-sided divisor**. 
 	- **GCD & LCM**: $d=\gcd(a,b)$ if it's a common divisor of $a,b$, and any common divisor of $a,b$ divides $d$. We can define $m=\lcm(a,b)$ in a similar manner. 
 		- **Uniqueness issue**: GCD (LCM) is obviously not unique for general rings.
 	- **Zero divisor**: $a$ is a zero divisor if there exists $b\neq0$ s.t. $ab=ba=0$. We can it left/right zero divisor when only one of them equals $0$.
+	- **Associates**: $a,b$ in $R$ are associates if $a=ub$ for some $u\in R^\times$. The property of being associates is obviously an equivalence relation ([[Set Theory]]).
 - **Unit**: $a\in R$ is a unit if it's multiplicatively invertible. The set of units in $R$ is denoted $R^\times$. 
-	- **Division ring**: $R$ is said to be a division ring (skew field) if $R^\times=R-\set{0}$.
+	- **Division ring**: $R$ is said to be a division ring (skew field) if $R^\times=R\backslash\set{0}$. It's obvious that a (commutative) division ring is necessarily an [[Integral Domain]]. 
 	- If $u\in R^\times$ and $s$ is nilpotent in a commutative ring $R$, then $u+s\in R^\times$. We only need to expand the geometric series $(1+(u^{-1}s))^{-1}$.
 	- **A non-unit is always contained in some maximal (left/right) ideal**: for $a$ not irreversible, consider the (left/right) ideal $(a)$. Now let the ideal extend, and by Zorn's lemma we're always able to find a biggest ideal among the extension chain, which is the maximal (left/right) ideal containing $a$.
-	- In commutative ring, sum of unit and nilpotent element is nilpotent.
 - **Characteristic**: define $\char(R)=|1|_+$ where $|\cdot|_+$ indicates the order in $(R,+)$ ([[Group]]). We define $\char(R)=0$ if such positive integer does not exist.
 	- **Alternative definition**: $\char(R)$ is the unique $k\in\mathbb N$ s.t. for homomorphism $\chi:\mathbb Z\to R$ we have $\ker\chi=k\mathbb Z$. Note that the homomorphism is unique because it's totally determined by the image of $1_{\mathbb Z}$, which must be mapped to $1_R$. We define the $P_R=\operatorname{im}\chi$ the **prime subring**. Thus $$P_R\cong\mathbb Z/\ker\chi\Rightarrow \char(R)=k\text{ iff }P_R\cong \mathbb Z_k$$
 	- We could also define the characteristic to be the exponent of the additive group.
@@ -24,7 +24,7 @@ A **subring** of the ring $R$ is a additive subgroup of $R$ that is closed under
 	- $Z(M_n(R))\cong Z(R)$, as the center consists of all $rI$.
 ## Ring homomorphisms
 A **ring homomorphism** is a structure preserving function $\phi:(R,+_R,\cdot_R)\to (S,+_S,\cdot_S)$ s.t. 
-1. $\phi:(R,+_R)\to(S,+_S)$ is a group homomorphism.
+1. $\phi:(R,+_R)\to(S,+_S)$ is a [[Group Homomorphism]].
 2. $\phi:(R,\cdot_R)\to(S,\cdot_S)$ is a monoid homomorphism.
 For rng we do not require the correspondence of identity. Special kinds of homomorphisms like monomorphism, epimorphism, endomorphism, and automorphism are defined similarly as in [[Group Homomorphism]].
 - **Kernel & image**: $\ker\phi$ is a two-sided [[Ideal]] of $R$, and $\im\phi$ is a subring of $S$.
@@ -43,3 +43,5 @@ We define $\aut(R)$ to contain all ring automorphisms of $R$. Sometimes $\aut(R,
 - **Skolem-Noether theorem**: for simple unitary rings $A,B$ and $K=Z(B)$, $K$ is a field due to simplicity. If the dimension of $B$ over $K$ is finite, and $A$ is also a $K$-algebra, then given $K$-algebra homomorphisms $f,g:A\to B$, there exists a unit $b\in B$ such that $$g(a)=b\cdot f(a)\cdot b^{-1}$$In particular, every automorphism of a central simple $K$-algebra is an inner automorphism.
 - Given $\phi\in\aut(R,+)$, if for any $a,b\in R$ at least one of the following holds: $$\phi(ab)=\phi(a)\phi(b)\quad\text{or}\quad\phi(ab)=\phi(b)\phi(a)$$then $\phi$ is either an automorphism or an anti-automorphism for $(R,\cdot)$.
   **Proof**: for any $a\in R$ denote $$l(a)=\set{r\in R:\phi(ar)=\phi(a)\phi(r)},\quad r(a)=\set{r\in R:\phi(ar)=\phi(r)\phi(a)}$$then since $\phi\in\aut(R,+)$ we know that $l(a),r(a)\le(R,+)$, hence by the avoidance lemma ([[Group]]) and the assumption we have either $l(a)=R$ or $r(a)=R$. Now we set $$l(R)=\set{r\in R:l(r)=R},\quad r(R)=\set{r\in R:r(r)=R}$$then the above argument can be repeated, showing that either $l(R)=R$ or $r(R)=R$, i.e., $\phi$ is an automorphism or an anti-homomorphism. 
+## Associative algebra over a commutative ring
+Given a commutative ring $R$, an **(associative) $R$-algebra** $A$ is a ring that is also an $R$-[[Module]] in such a way that two additions (ring addition and module addition) are the same operation, and scalar multiplication satisfies $$r\cdot(xy)=(r\cdot x)y=x(r\cdot y),\quad\forall r\in R,x,y\in A$$this definition implies that the algebra, being a ring, is unital, since rings are supposed to have a multiplicative identity. 
