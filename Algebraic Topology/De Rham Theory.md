@@ -1,0 +1,7 @@
+**Motivation**: since exact forms ([[Calculus on Oriented Euclidean Space]]) are useful but not easy to identity directly, while closed forms can be identified directly, it's natural to ask when a exact form coincides with a closed form. Poincaré proved that for $k=1,2,3$ a $k$- form on $\mathbb R^n$ is exact iff it's closed, and the result is further generalized by Georges de Rham. To summarize, the answer depends on the topology on the space.
+
+---
+Given [[Smooth Manifold]] $M$, denote $$\begin{align}Z^k(M)&=\ker\left( d:\Omega^k(M)\to\Omega^{k+1}(M)\right)=\set{\text{closed }k\text{-forms on }M}\\ B^k(M)&=\im\left(d:\Omega^{k-1}(M)\to\Omega^k(M)\right)=\set{\text{exact }k\text{-forms on }M}\end{align}$$By definition ([[Differential Form]]) we have $B^k\subset Z^k$. The **de Rham cohomology** of $M$ in degree $k$ is defined as the quotient [[Vector Space]] $$H_{dR}^k(M)=Z^k(M)/B^k(M),\quad\omega'\sim\omega\iff\omega'-\omega\in B^k(M),\quad\forall\omega',\omega\in Z^k(M)$$each equivalence class $[\omega]$ is called a **cohomology class**, and elements within the same class are said to be **cohomologous**. 
+- **Examples**
+	- For $M$ with $r$ connected components, $H^0(M)=\mathbb R^r$.
+	- For $\dim M=m$ we have $H^k(M)=0,\forall k>m$, as an obvious corollary of the fact that $A_k(TM)=0$ for $k>m$. [[Exterior Algebra]]
