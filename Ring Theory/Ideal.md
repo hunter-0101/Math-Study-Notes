@@ -2,7 +2,7 @@ Given a [[Ring]] $(R,+,\cdot)$ an **ideal** is a subset $I\subset R$ s.t.:
 1. **Additive subgroup structure**: $(I,+)\le(R,+)$.
 2. **Multiplication absorption**: $RI\subset I,IR\subset I$. When only one hold, we call it left/right ideal. 
 We sometimes use $\mathfrak{a,b,c}$, etc. to denote ideals. Note that an ideal is not necessarily a subring ([[Ring]]) since we have $1\notin I$ in non-trivial cases. 
-- **Structure of collection of ideals**: we denote the collection of all ideals in the ring $R$ as $\mathcal I(R)$. It's quite obvious from definition that $$I,J\in\mathcal I(R)\imply I+J,IJ,I\cap J\in\mathcal I(R)$$For convenience we also define $$\mathcal I_I(R)=\set{J\in\mathcal I(R):I\subset J}$$which is quite commonly used when dealing with quotient rings. 
+- **Structure of collection of ideals**: we denote the collection of all ideals in the ring $R$ as $\Id R$. It's quite obvious from definition that $$I,J\in\Id R \imply I+J,IJ,I\cap J\in\Id R$$For convenience we also define $$\mathcal I_I(R)=\set{J\in\Id R:I\subset J}$$which is quite commonly used when dealing with quotient rings. 
 - **Quotient ring**: for two-sided ideal $I$ in $R$ define the **quotient ring of $R$ modulo $I$** by $$R/I=R/\sim\quad\text{where}\quad r\sim s\iff r-s\in I,\quad\forall r,s\in R$$with operations given by $$(r+I)+(s+I)=(r+s)+I,\quad (r+I)\cdot(s+I)=(r\cdot s)+I$$This generalizes the notion of quotient [[Group]]. By absorption property $R/I$ is subring of $R$.
 	- **Correspondence theorem for ideals**: we have the [[Lattice]] isomorphism between ideals $$\Phi_I:(\mathcal I_I(R),\subset)\to(\mathcal I(R/I),\subset),\quad\Phi(J)=J/I$$which follows directly form the correspondence theorem of [[Ring]]. 
 ## Special kind of ideals
