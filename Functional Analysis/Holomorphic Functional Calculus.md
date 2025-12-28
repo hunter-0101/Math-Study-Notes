@@ -1,12 +1,12 @@
-**Intuition**: holomorphic functional calculus is a generalization of [[Holomorphic Function]] and [[Contour Integral]] to [[Operator on Hilbert Space]], in the way that images of a function is allowed to take value from a Banach algebra (consisting of operators). 
+**Intuition**: holomorphic functional calculus is a generalization of [[Holomorphic Function]] and [[Contour Integral]] to operators on [[Banach Space]], in the way that images of a function is allowed to take value from a Banach algebra (consisting of operators). 
 
 ---
-Given a [[Banach Algebra]] $A$ over $\mathbb C$ and $f:U\to A$ where $U\subset\mathbb C$ is open, we say that $f$ is 
-- **Holomorphic** in $U$ if $\lim_{z\to w}\frac{f(z)-f(w)}{z-w}$exists for all $w\in U$.
-- **Weakly holomorphic** on $U$ if $\phi\circ f:U\to\mathbb C$ is holomorphic in the usual [[Complex Function]] sense for all $\phi\in A^*$.
-The above two concepts are actually equivalent due to linearity and continuity of functional. Intuitively this is due to the separating property of [[Topological Dual Space]] of Banach space.
-- **Liouville's theorem**: if $f:\mathbb C\to A$ is holomorphic and bounded, then it's constant. This follows directly from the usual Liouville's theorem ([[Cauchy Integral]]) via weak holomorphicity.
-- **Integral**: given $f:[a,b]\to A$ define its **Riemann sum** w.r.t $P=\set{a=a_0\le\cdots\le a_n=b}$ as $$R(f,P)=\sum_{k=1}^n(a_k-a_{k-1})f(a_k)$$We say that $f$ is integrable if there exists $t\in A$ s.t. $$\lim_{n\to\infty}R(f,P_n)=t,\quad\forall\|P_n\|=\max_k|a_{k}-a_{k-1}|\to0$$We adapt the usual notations from [[Riemann Integral]].
+Given a [[Banach Algebra]] $A$ over $\mathbb C$ and $f:U\to A$ continuous where $U\subset\mathbb C$ is a domain ([[Complex Function]]), there are two **equivalent** generalization of [[Holomorphic Function]]: 
+1. **Holomorphicity**: local linear approximation is valid, i.e., there exists a derivative $$f'(w)=\lim_{z\to w}\frac{f(z)-f(w)}{z-w},\quad\forall w\in U$$This directly generalizes the notion of holomorphicity for [[Complex Function]]. 
+2. **Weak holomorphicity**: composition with continuous functional ([[Topological Dual Space]]) is holomorphic in the usual sense: $$(\ell\circ f)\in\mathcal O(U),\quad\forall\ell\in A^*$$It's weaker than holomorphicity due to linearity of functional. 
+**Proof of equivalence**: for $(1\Rightarrow2)$, by linearity and continuity of functional we have that $$\lim_{z\to w}\frac{\ell\circ f(z)-\ell\circ f(w)}{z-w}=\ell\left(\lim_{z\to w}\frac{f(z)-f(w)}{z-w}\right)=\ell\circ f'(w)\quad\forall\ell\in A^*$$which implies holomorphicity ([[Complex Function]]); $(2\Rightarrow1)$ follows also from the equality above by the separating property of [[Topological Dual Space]]. 
+- **Liouville's theorem**: bounded $f\in\mathcal O(\mathbb C)$ must be constant. The original Liouville's theorem ([[Cauchy Integral]]) is generalized here via weak holomorphicity. 
+- **Riemann integral**: the **Riemann sum** of $f:[a,b]\to A$ w.r.t the partition $P=\set{a_k}_{1\le k\le n}$ is $$R(f,P)=\sum_{k=1}^n(a_k-a_{k-1})f(a_k)$$We say that $f$ is **Riemann integrable** if there exists $t\in A$ s.t. $$\lim_{n\to\infty}R(f,P_n)=t,\quad\forall\|P_n\|=\max_k|a_{k}-a_{k-1}|\to0$$We adapt the usual notations from [[Riemann Integral]].
 	- **Interchangeability with functional**: for $f\in C([a,b])$ we have $$\phi\left(\int_a^bf\right)=\int_a^b\phi\circ f,\quad\forall\phi\in\mathcal B(A,A')$$by linearity of $\phi$ and Riemann sum definition.
 	- **Linearity**: $t\left(\int_a^bf\right)=\left(\int_a^bf\right)t=\int_a^b(tf)$ for all $t\in A$ by Riemann sum definition.
 	- **Path integral**: similar to [[Contour Integral]] we define the path integral via parametrization of contour.

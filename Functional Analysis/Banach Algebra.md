@@ -1,9 +1,13 @@
-An associative algebra ([[Ring]]) possessing a sub-multiplicative norm ([[Vector Space]]) is called a **normed algebra**. When the norm is complete we further call it a **Banach algebra** ([[Banach Space]]). Below we assume that $A,\Gamma$ is a Banach algebra, with multiplicative identity denoted as $e$.
-- **Norm structure**: norm of a Banach algebra is not unique, however by sub-multiplicativity we must have $\|e\|\ge1$. For non-uniqueness, notice that given $(A,\|\cdot\|)$ a Banach algebra and $t\ge 1$ we have $(A,t\|\cdot\|)$ also a Banach algebra.
-- **Structure of $A^\times$**: for any $\|t\|<1$ we have $$(e-t)^{-1}=e+t+t^2+\cdots$$which can be verified directly via completeness. It's easy to deduce that for $t\in A^\times$ we have $$s\in A^\times,\quad\forall s\in A,\|s-t\|<\|t^{-1}\|^{-1}$$by looking at $s=s-t+t=t(e-t^{-1}(t-s))$. Hence $A^\times$ is **open**.
+A **Banach algebra** is a tuple $(A,\|\cdot\|)$ satisfying:
+1. **Complete Normed associative algebra structure**: $(A,\|\cdot\|)$ forms a normed associative algebra ([[Ring]]) that is also a [[Banach Space]] under the given norm. 
+2. **Sub-multiplicativity**: $\|\cdot\|$ is sub-multiplicative, i.e., $\|st\|\le\|s\|\cdot\|t\|,\forall t,s\in\Gamma$
+We denote the multiplicative identity as $e$. The underlying field is assumed to be $\mathbb C$ throughout, although it can be generalized to any complete [[Field]].
+- **Openness of $A^\times$**: for any $\|t\|<1$ by completeness criterion ([[Banach Space]]) we have $$(e-t)^{-1}=\sum_{n\in\mathbb N}t^n\imply\norm{(e-t)^{-1}}\le\sum_{n\in\mathbb N}\|t\|^n=\frac{1}{1-\|t\|}$$Based on this, by the decomposition $s=s-t+t=t(e-t^{-1}(t-s))$ we can deduce that $$t\in A^\times\imply s\in A^\times,\quad\forall s\in A,\|s-t\|<\|t^{-1}\|^{-1}$$Therefore $A^\times$ is open.
+	- **Continuity of inverse**: by the estimation of norm above we can also deduce that the map $t\mapsto t^{-1}$ is continuous on $A^\times$. 
 	- If $A^\times=A\backslash\set{0}$ then $A$ is isometrically isomorphic to $\mathbb C$ as a Banach algebra.
 	  **Proof**: let $h(\alpha)=\alpha e,\alpha\in\mathbb C$, then if $t\in A\backslash h(\mathbb C)$ we have $\alpha e-t\in A^\times,\forall\alpha\in\mathbb C$, which implies $\sigma(t)=\varnothing$, contradiction fundamental theorem of [[Spectrum]]. It suffices to verify that $h$ is a linear isometry with $h(\alpha\beta)=h(\alpha)h(\beta)$, which are obvious.
 		- **Norm**: in this case by $\mathbb C$-linearity the norm is determined by $\|e\|=t\ge1$.
+- **Spectrum**: all definitions (except for the refinement of spectrum) in [[Spectrum]] applies to this general setting, since only the algebraic properties of elements are used there. 
 ## Ideal
 For **commutative** Banach algebra $\Gamma$, a subset $\Lambda\subset\Gamma$ is called an **ideal** if it's both a vector subspace ([[Vector Space]]) and a [[Ring]] ideal.
 - **Basic properties**
