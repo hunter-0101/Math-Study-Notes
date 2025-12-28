@@ -21,7 +21,7 @@ There are four isomorphism theorems:
 	- $A\triangleleft G$ iff $\overline{A}\triangleleft\overline{G}$.
 ## Automorphism
 The set of **automorphisms** of $G$ is denoted $$\aut(G)=\set{\pi:G\to G \text{ an isomorphism}}$$which forms a [[Group]] under composition. When isomorphism is replaced by homomorphism we get the **endomorphism group** $\operatorname{End}(G)$.
-- **Inner Automorphism**: the set of inner automorphisms is defined as  $$\inn(G)=\set{\phi_g\in\aut(G):\phi_g(x) = gxg^{-1}}$$We have $\inn(G)\triangleleft \aut(G)$ by properties of conjugation ([[Group Actions]]), and the quotient group $\out(G)=\aut(G)/\inn(G)$ is called the **outer automorphism group**.
+- **Inner Automorphism**: the set of inner automorphisms is defined as  $$\inn(G)=\set{\phi_g\in\aut(G):\phi_g(x) = gxg^{-1}}$$We have $\inn(G)\triangleleft \aut(G)$ by properties of conjugation ([[Group Action]]), and the quotient group $\out(G)=\aut(G)/\inn(G)$ is called the **outer automorphism group**.
 	- $G/Z(G)\cong \inn(G)$ given by $g Z(G)\mapsto\phi_g$.
 - **Characteristic subgroup**: $H\char G$ if $\phi(H)\le H$ for any $\phi\in \aut(G)$.
 	- By the definition every characteristic subgroup is normal.

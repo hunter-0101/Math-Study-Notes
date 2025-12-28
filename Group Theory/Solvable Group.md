@@ -40,7 +40,7 @@ A group $G$ is called **nilpotent** if it satisfies one of the following **equiv
 2. $G$ has a upper/lower central series that terminates with trivial subgroup.
 3. $G$ can be obtained from abelian groups by successive central extensions. Here central extension refer to those where the image of the normal subgroup $N$ is central in $G$. (Note that this poses a stronger constraint to the extension, thus **all nilpotent groups are solvable**)
 4. (Finite) $G$ is equal to a direct product of its Sylow subgroups.
-	- This can be shown by the fact that a). p-groups are nilpotent. b). A group is equal to the direct product of its Sylow subgroups if $n_p=1$ for all primes $p\mid |G|$. [[Sylow's Theorems]]
+	- This can be shown by the fact that a). p-groups are nilpotent. b). A group is equal to the direct product of its Sylow subgroups if $n_p=1$ for all primes $p\mid |G|$. [[Sylow Theorems]]
 ### Central series
 A **central series** is a kind of normal series of subgroups. For $G$, the central series is defined as $$G=G_0\triangleright G_1\triangleright\cdots\triangleright G_n=1$$where each quotients are central in $G/G_{i+1}$: $[G,G_i]\le G_{i+1}$.
 - A group has a central series iff it's nilpotent.
