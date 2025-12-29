@@ -1,8 +1,11 @@
-**Group homomorphism** is a function $\phi: G \to H$ between two groups $G$ and $H$ that preserves the group operation, i.e., for all $a, b \in G$, we have $\phi(ab) = \phi(a)\phi(b)$. In this case we denote $G\simeq H$.
-- We always have $\phi(e_G)=e_H,\phi^{-1}(a)=\phi(a^{-1})$.
-- **Kernel**: $\ker(\phi) =\{g \in G \mid \phi(g) = e_H\}$.
-- **Isomorphism**: a homomorphism $\phi:G\to H$ is an isomorphism if there exists $\psi:H\to G$ s.t. $\phi\circ\psi=\id_H,\psi\circ\phi=\id_G$. This is equivalent to $\phi$ being bijective, denoted $G\cong H$.
-- **Other morphisms**: $\phi:G\to H$ is called an **monomorphism** if it's injective, an **epimorphism** if it's surjective, and an **endomorphism** if $H=G$. An isomorphic endomorphism is called an **automorphism**.
+Given two [[Group]] $G,H$, a **group homomorphism** is a function $$\phi: G \to H$$satisfying the property of **preservation of group operation**, i.e., $$\phi(ab)=\phi(a)\phi(b),\quad\forall a,b\in G\imply\phi(e_G)=e_H,\quad\phi\left(a^{-1}\right)=\phi(a)^{-1}$$Two groups with a homomorphism between them is denoted $G\simeq H$. The collection of all homomorphisms from $G$ to $H$ is denoted $\hom(G,H)$. 
+- **Kernel**: the kernel of a homomorphism is defined as $$\ker\phi =\set{g \in G: \phi(g) = e_H}$$which is similar to the definition in [[Vector Space]]. 
+- **Isomorphism**: an isomorphism is a homomorphism $\phi:G\to H$ that is invertible, i.e., there exists another homomorphism $\psi:H\to G$ s.t. $$\psi\circ\phi=\id_G,\quad \phi\circ\psi=\id_H$$This is equivalent to $\phi$ being bijective, denoted $G\cong H$.
+- **Other morphisms**
+	- **Monomorphism**: injective homomorphism.
+	- **Epimorphism**: surjective homomorphism.
+	- **Endomorphism**: a homomorphism from $G$ to itself, i.e., $H=G$. 
+	- **Automorphism**: an isomorphic endomorphism. 
 - **Fundamental theorem of homomorphism**: given $\phi:G\to H,N\triangleleft G$ with $N\subset\ker\phi$, there exists a unique $\overline\phi:G/N\to H$ s.t. $\phi=\overline\phi\circ\pi$, i.e., the following diagram commutes: 
   <p align="center"><img align="center" src="https://i.upmath.me/svg/%0A%5Cbegin%7Btikzcd%7D%0AG%20%5Carrow%5Br%2C%20%22%5Cphi%22%5D%20%5Carrow%5Bd%2C%20%22%5Cpi%22'%5D%20%26%20H%20%5C%5C%0AG%2FN%20%5Carrow%5Bru%2C%20%22%5Coverline%5Cphi%22'%5D%20%20%20%20%20%20%26%20%20%0A%5Cend%7Btikzcd%7D%0A" /></p>
   and $\im\overline\phi=\im\phi,\ker\overline\phi=\pi(\ker\phi),\ker\phi=\pi^{-1}(\ker\overline\phi)$ where $\pi$ is the canonical projection.
@@ -20,8 +23,8 @@ There are four isomorphism theorems:
 	- $\overline{A\cap B}=\overline{A}\cap\overline{B}$.
 	- $A\triangleleft G$ iff $\overline{A}\triangleleft\overline{G}$.
 ## Automorphism
-The set of **automorphisms** of $G$ is denoted $$\aut(G)=\set{\pi:G\to G \text{ an isomorphism}}$$which forms a [[Group]] under composition. When isomorphism is replaced by homomorphism we get the **endomorphism group** $\operatorname{End}(G)$.
-- **Inner Automorphism**: the set of inner automorphisms is defined as  $$\inn(G)=\set{\phi_g\in\aut(G):\phi_g(x) = gxg^{-1}}$$We have $\inn(G)\triangleleft \aut(G)$ by properties of conjugation ([[Group Action]]), and the quotient group $\out(G)=\aut(G)/\inn(G)$ is called the **outer automorphism group**.
+The set of **automorphisms** of $G$ is denoted $$\aut G=\set{(\phi:G\to G): \phi\text{ is an isomorphism}}$$It's obvious that $(\aut G,\circ)$ is a [[Group]]When isomorphism is replaced by homomorphism we get the **endomorphism group** $\operatorname{End}G$.
+- **Inner automorphism**: inner automorphisms are automorphisms defined via conjugation:  $$\inn G =\set{\phi_g\in\aut(G):\phi_g(x) = gxg^{-1}}$$We have $\inn(G)\triangleleft \aut(G)$ by properties of conjugation ([[Group Action]]). The quotient group $$\out G=\aut G/\inn G$$is called the **outer automorphism group**.
 	- $G/Z(G)\cong \inn(G)$ given by $g Z(G)\mapsto\phi_g$.
 - **Characteristic subgroup**: $H\char G$ if $\phi(H)\le H$ for any $\phi\in \aut(G)$.
 	- By the definition every characteristic subgroup is normal.
