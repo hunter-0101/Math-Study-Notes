@@ -7,7 +7,7 @@ A $p$-group is a finite [[Group]] $P$ with $$|P|=p^n,\quad n\in\mathbb N$$
 	- **Proof of the expression of $\Phi(P)$**: from above we know that $P^p[P,P]\le\Phi(P)$. Now that $P/\Phi(P)$ is elementary abelian, we know that $P/\Phi(P)\cong\prod C_p$, thus every elements within it is non-removable from some generating set. Hence $\Phi(P)=P^p[P,P]$.
 - **Lattice of p-groups**: two p-groups with isomorphic subgroup lattice is of the same order. [[Group#Lattice of subgroups]]
 	- **Proof**: it suffices to show that when $|P_1|\neq|P_2|$ their lattice non-isomorphic. For a $|P|=p^n$, by Sylow's theorem there exists a subgroup $P'\le P$ with $|P'|=p^{n-1}$. Apply this repeatedly we get a chain of length $n-1$. Now it can be easily seen that the **longest length** characterize the order of the group, thus yielding the result.
-- p-groups are solvable and nilpotent. This can be directly derived from the fact that the center of p-group is not trivial. [[Solvable Group]]
+- p-groups are solvable ([[Normal Subgroup]]) and nilpotent. This can be directly derived from the fact that the center of p-group is not trivial. 
 - **p-group of special order**
 	- $|G|=p^2$ is abelian
 ## Basic properties

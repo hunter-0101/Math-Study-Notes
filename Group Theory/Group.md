@@ -1,19 +1,7 @@
-**Intuition**: a group $G$ in the usual concrete form is actually a **shadow** of a more abstract and structural notion of symmetry, a specific representation **evaluated** on a specific object of the actual **generator of symmetries**. 
-- **[[Distribution]] analogy**: in distribution theory a distribution is defined not via point value, but how it acts on test functions via integration. Similarly, a group does not inherently carries structures until it acts on some object. To put simply, we state that $$\text{A group can be understood in terms of its actions on all possible sets.}$$This idea is formalized by [[Yoneda Lemma]]: consider the single object [[Category]] $*_G$ given a group $G$, then a functor $F:*_G\to\textbf{Set}$ realizes (left) [[Group Action]] of $G$ on $X=F(*_G)$. Since $h_*=\hom(*,-)\cong G$, while Yoneda lemma states that $$\nat(h_*,F)\cong F(*)=X$$Hence $F$ is a group action on $X$, and a natural transformation $\mu:h_*\to F$ is determined by $\mu(\id_*)\in X$. This means that the space of natural transformations from the regular actions (self-action) to an arbitrary group action corresponds exactly to the underlying set $X$ that the group acts on.
-	- **General definition of group**: a group can be defined as a single object category where all morphisms are isomorphisms, with closure of group operation deriving from the composition axiom of category. In general a category where all morphisms are isomorphisms is referred to as a **groupoid**. 
-- **[[Matrix]] analogy**: in matrix theory we treat a matrix as the representation of a linear transform given a specific basis ([[Vector Space]]). Similarly, a group can be viewed as a specific representation of symmetry evaluated a specific object, as discussed above, validated by the Yoneda lemma. 
-	- **Information collapse under evaluation**: when $F$ is not faithful the image $X=F(*_G)$ might be strictly "smaller" then the structure of $\ob(*_G)$, causing information collapse, e.g., when $G=\set{e,a},F:*_G\to X=\set{x}$ the new group evaluated on $X$ turn out to be $\set{e}$, and we cannot distinguish between the two morphisms $e,a$. Formally, this is due to the fact that $G\to S_X$ is not injective ([[Group Action]]). The cases where information collapse does not happen is referred to as **faithful representation**.
-The above discussion also provides some insights about standings of functional and matrices: 
-- **Functionals** are maps from a function space to $\mathbb R$.
-- **Matrices** are linear maps between vector spaces $A:V\to W$.
-Both are **representations**: they make abstract transformations concrete by pinning them to a specific coordinate system (test function or basis).
+**Group as ontology of action**: a group is more than a set of algebraically related elements - it's a collection of symmetries of some set $X$ in a [[Category]] that is acted upon via [[Group Action]], which formed a [[Symmetric Group]]. 
 
 ---
-**Discussion**: as discussed above, below, and in [[Group Action]] and [[Symmetric Group]], a group is essentially a concretized version of symmetry, and many of the basic properties of groups are derived by acting it upon different objects. 
-Moreover, one important technique is to partition the action into different types, so that tools from [[Division]] can be applied to establish existence of some specific type of action. 
-
----
-A **group** is an ordered pair $(G,\cdot)$ where $\cdot:G\times G\to G$ (abbreviate $a\cdot b$ as $ab$) satisfies
+A **group** is a tuple $(G,\cdot)$ where $\cdot:G\times G\to G$ (abbreviate $a\cdot b$ as $ab$) satisfies
 1. **Associativity**: $(ab)c=a(bc)$ 
 2. **Existence of (unique) identity**: $\exists e\in G$ s.t. $ea=ae=a,\forall a\in G$.
 3. **Existence of (unique) inverse**: $\exists a^{-1}\in G$ s.t. $aa^{-1}=a^{-1}a=e$.
@@ -30,7 +18,7 @@ $G$ is said to be **abelian** (**commutative**) if the operation is commutative,
 	- **Rank of abelian group**: given $G$ abelian, we can also define $\rank G$ as the [[Cardinality]] of its maximal $\mathbb Z$-linearly independent subset.
 		- **Well-defined and equivalence**: for two maximal $\mathbb Z$-linearly independent subset  $\set{g_i}_{i=1}^n,\set{h_j}_{j=1}^m$ with $m>n$, by adding each $h_j$ into $\set{g_i}$ we can find $$h_j=\sum_{i}a_{ij}g_i\quad\Longrightarrow\quad\begin{pmatrix}h_1\\\vdots\\ h_m\end{pmatrix}=[a_{ij}]_{m\times n}\begin{pmatrix}g_1\\\vdots\\ g_n\end{pmatrix}$$hence by [[Matrix]] we must have $\set{h_j}_{j=1}^m$ linearly dependent, which is a contradiction. For equivalence with the definition of rank of a general group just notice that a subset is maximally $\mathbb Z$-linearly independent iff it's a minimal generator.
 ## Subgroups
-A **subgroup** $H\le G$ is a subset $H\subset G$ s.t. $(H,\cdot)$ forms a group. We have the **subgroup criterion** $$H\le G\quad\iff\quad ab^{-1}\in H,\quad\forall a,b\in H$$which is derived directly from definition.
+A **subgroup** $H\le G$ is a subset $H\subset G$ s.t. $(H,\cdot)$ forms a group. We have the **subgroup criterion** $$H\le G\quad\iff\quad ab^{-1}\in H,\quad\forall a,b\in H$$which is derived directly from definition. We'll conventionally use the notations $$\sub G=\set{H:H\le G},\quad\sub_KG=\set{H:K\le H\le G}$$Note that other notations like $\mathcal S(G)$ are also used instead. 
 - **Coset**: by invertibility we can verify that $$aH=bH\quad\iff\quad aH\cap bH\neq\varnothing\quad\iff\quad a\in bH\quad\iff\quad b^{-1}a\in H$$Hence we can define **left cosets** via quotient w.r.t the equivalence relation ([[Set]]) $$G/H=G/\sim\where a\sim b\iff aH=bH$$Any $b\in aH$ is called a **representative** of $aH$. Similarly we can define the **right cosets**, denoted as  $H\backslash G$. 
 	- **Discussion on equipartition**: invertibility assumption (therefore, the cancelation law) ensures that the cosets are copies of "rigid translations" without any "overlap", and this symmetry is one key source of special structural properties related to groups. 
 	- **Discussion on left/right cosets**: it worth noting that multiplication in the left/right results in different left/right cosets that cannot be corresponded in general. For instance, in the [[Symmetric Group]] $S_3$ set $$H=\set{e,(12)}\imply\begin{cases}\text{Left cosets}\begin{cases}(13)H=\set{(13),(123)}\\(23)H=\set{(23),(132)}\end{cases}\\\text{Right cosets}\begin{cases}H(13)=\set{(13),(132)}\\H(23)=\set{(23),(123)}\end{cases}\end{cases}$$Therefore the best we can say in general is that the partition is uniform, but exactly how each class looks like is quite complicated. 
@@ -54,14 +42,6 @@ A **subgroup** $H\le G$ is a subset $H\subset G$ s.t. $(H,\cdot)$ forms a group.
 		- See properties of Frattini subgroup of p-group in [[Group Gallery]].
 - **Avoidance lemma**: given $H,K< G$ we have $G\neq H\cup K$.
   **Proof**: WLOG assume that $H\triangle K\neq\varnothing$, take $a\in H-K,b\in K- H$, then if $G=H\cup K$ we must have $ab\in H$ or $ab\in K$, where either case would lead to a contradiction.
-### Normal subgroup
-A subgroup $H\le G$ is **normal** if $$H\triangleleft G\qiffq N_G(H)=G$$There are several equivalent characterizations for this that are useful:
-1. **Invariance under conjugation ([[Group Action]])**: $g^{-1}hg\in H,\forall g,\in G,h\in H$. 
-2. **Coset definition**: $gH=Hg,\forall g\in G$, i.e., the left and right coset coincide.
-3. **Kernel characterization**: $H=\ker\phi$ for some [[Group Homomorphism]] $\phi$. 
-The property of being normal implies that **group operations are compatible with taking quotient**, therefore the collection $G/H$ itself forms another group. 
-- **Intuition**: a normal subgroup is a fixed point in the set of subgroups of $G$ under the [[Group Action]] of conjugation, i.e., is a subgroup that "remains unchanged" when "viewed from any other perspective". 
-- **Quotient group**: given $N\triangleleft G$ the collection of cosets $G/N$ with operations $$(aN)(bN)=(ab)N,\quad(aN)^{-1}=a^{-1}N$$is called the quotient group of $G$ w.r.t $H$. 
 ### Lattice of subgroups
 The lattice of subgroups of a group $G$ is the lattice whose elements are the subgroups of $G$. with the partial ordering being set inclusion.
 ![[Pasted image 20241212165429.png]]
@@ -70,12 +50,6 @@ The lattice of subgroups of a group $G$ is the lattice whose elements are the su
 - **Subgroup lattice and structure of group**: a specific group has a unique subgroup lattice, as the inclusion relation between all subgroups are fixed. However, given a subgroup lattice it's hard to establish the structure of the group itself.
 	- **Non-isomorphic groups may share the same lattice structure**: consider $C_p,C_q$ where $p,q$ are primes, then they share the same lattice structure. Even stronger conditions, say, the same order of the group, lattice of normal subgroups, automorphism group, combined together, would not guarantee that two groups are isomorphic.
 ## Other info
-### Group extension
-For two groups $Q,N$, a group $G$ is the extension of $Q$ by $N$ if there is an exact sequence of homomorphisms $$1\to N\xto{\iota}G\xto{\pi} Q\to1$$with $i$ injective and $\pi$ surjective, and $\ker\pi=\operatorname{Im}i$. Thus we have that $G/i(N)\cong Q$.
-- **Central extension**: an extension is central if $i(N)\subset Z(G)$. Say, the extension $$1\to N\to N\rtimes_\theta Q\to Q\to 1$$defined by semi-direct product is central iff $\theta$ is trivial and $N$ is abelian.
-- **Isomorphic extension**: two extensions are isomorphic if there exists a commutative diagram
-  <p align="center"><img align="center" src="https://i.upmath.me/svg/%0A%5Cbegin%7Btikzcd%7D%0A1%20%5Carrow%5Br%5D%20%26%20N%20%5Carrow%5Br%5D%20%5Carrow%5Bd%2C%20Rightarrow%2C%20no%20head%5D%20%26%20G%20%5Carrow%5Br%5D%20%5Carrow%5Bd%2C%20%22%5Capprox%22%5D%20%26%20Q%20%5Carrow%5Br%5D%20%5Carrow%5Bd%2C%20Rightarrow%2C%20no%20head%5D%20%26%201%20%5C%5C%0A1%20%5Carrow%5Br%5D%20%26%20N%20%5Carrow%5Br%5D%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%26%20G'%20%5Carrow%5Br%5D%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%26%20Q%20%5Carrow%5Br%5D%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%26%201%0A%5Cend%7Btikzcd%7D%0A" /></p>
-  An extension is said to be **split** if it's isomorphic to the extension defined by a semi-direct product. 
 ### Topological group
 A **topological group** is a triple $(G,\cdot,\mathcal T_G)$ consisting of:
 1. **Group structure**: $(G,\cdot)$ is a group. 
