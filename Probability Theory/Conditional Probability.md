@@ -1,12 +1,20 @@
-We adapt the definitions and assumptions in [[Random Variable]].
+The philosophical motivation behind the definition of conditional probability can be found in [[Philosophy of Probability & Statistics]]. 
+
+**Cox's theorem**: assume that there is a **measure of plausibility** satisfying:
+1. **Divisibility & comparability**: plausibility for a proposition is always a real number ([[Real Number System]]) and is dependent on the information we have related to the proposition.
+2. **Common sense**: plausibilities should vary sensibly with the assessment of plausibilities in the model.
+3. **Consistency**: if the plausibility can be derived in many ways, all the results must be equal. 
+Then we can derive most of the axioms of probability. This is used as a justification for the use of Bayesian probability theory, and many philosophers suggest, based on this theorem, that probability theory should be used as a normative model for reasoning. 
+
+**Remark on notation**: we adapt the definitions and assumptions in [[Random Variable]].
 
 ---
 ## Conditional expectation
-For sub-$\sigma$-field $\mathcal C\subset\Sigma$ and an RV $X$, **a version of conditional expectation** of $X$ given $\mathcal C$, denoted $E(X|\mathcal C)$, is any function $h$ that is $(\mathcal C,\mathcal B(\mathbb R))$-measurable and $$\int_ChdP=\int_CXdP,\quad\forall C\in\mathcal C$$Existence of such function is obvious via domain projection of $X$ onto $\mathcal C$. The formal proof relies on R-N derivative ([[Signed Measure]]) by observing that the measure $\mu(C)=\int_CXdP$ satisfies $\mu\ll P$. For two RVs $X,Y$ we define $E(X|Y)=E(X|\sigma(Y))$.
+Given a [[Probability Space]] $(\Omega,\Sigma,P)$ and a [[Random Variable]] $X$, consider a sub-$\sigma$-field $\mathcal C\subset\Sigma$. **A version of conditional expectation** of $X$ given $\mathcal C$, denoted $E(X|\mathcal C)$, is any function $h$ that is $(\mathcal C,\mathcal B(\mathbb R))$-measurable and $$\int_ChdP=\int_CXdP,\quad\forall C\in\mathcal C$$Existence of such function is obvious via domain projection of $X$ onto $\mathcal C$. The formal proof relies on R-N derivative ([[Signed Measure]]) by observing that the measure $\mu(C)=\int_CXdP$ satisfies $\mu\ll P$. For two RVs $X,Y$ we define $E(X|Y)=E(X|\sigma(Y))$.
 - **Intuition**: $E(X|\mathcal C)$ is a "**restricted**" version of $X$ whose "observable randomness" depends only on $\mathcal C$. This is done by **averaging $X$ out** on sets that are "finer" than $\mathcal C$, and discarding sets that do not intersect with $\mathcal C$. 
 	- **[[Hilbert Space]] analogy**: the domain projection analogy is rigorous if we consider $$\mathcal H=\set{X\in L^2}\quad\text{with}\quad\braket{X,Y}=E(XY),\quad\mathcal H_0=\set{X\in\mathcal H:EX=0}$$in which case we'll have an intuitive correspondence $$\cos(X,Y)=\rho(X,Y),\quad X\perp_{\mathcal H} Y\iff E(XY)=0,\quad\forall X,Y\in\mathcal H_0$$it can be verified in this case that $\operatorname{Proj}_{\mathcal H_\mathcal C}(X)=E(X|\mathcal C)$ where $\mathcal H_\mathcal C$ is the subspace restricted to RVs that are $\mathcal C$-measurable.
 	- **Why conditional expectation first**: conditional expectation is more foundational and better-behaved analytically in the framework of measure theory, and it's also natural and easier to define $P(A|\mathcal C)=E(\chi_A|\mathcal C)$. Another thing to notice is that conditional probability itself requires some restriction on the probability space to be regular (e.g.,, $\Omega$ being a Polish space).
-	- **Why use version**: similar to [[Lp Space]], we're use equivalent classes under $\ae$ equality.
+	- **Why use version**: similar to [[Lp Space]], we're using equivalent classes under $\ae$ equality.
 - **Conditional variance**: we define $$\var(X|Y)=E(X-E(X|Y))^2|Y)$$and similarly **conditional covariance** as $$\cov(X,Y|Z)=E\big((X-E(X|Z))(Y-E(Y|Z))|Z\big)$$since conditional probability is also a probability measure, these two concepts inherits all properties from [[Random Variable]].
 	- **Law of total variance**: $\var(X)=E(\var(X|Y))+\var(E(X|Y))$. This can be seen from $$\cov(E(X|Y),X-E(X|Y))=0\Longrightarrow\var(X-E(X|Y))=E(X-E(X|Y))^2=E(\var(X|Y))$$Intuitively it's a generalization of Pythagorean's law where perpendicularity is measured by $\cov$. Similarly we have law of total covariance $$\cov(X,Y)=E\big(\cov(X,Y|Z)\big)+\cov\big(E(X|Z),E(Y|Z)\big)$$via similar proof.
 - **Properties**
