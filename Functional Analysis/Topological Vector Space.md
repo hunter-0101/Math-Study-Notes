@@ -10,7 +10,9 @@ This is a central object investigated in functional analysis. Note that [[Normed
 - **Non-Normable Examples**:
     - **$L^p([0, 1])$ for $0 < p < 1$**: A metric TVS that is not locally convex (the only continuous linear functional is the zero functional).
     - **$C^\infty(\Omega)$**: The space of smooth functions with the topology of uniform convergence of all derivatives on compact subsets. This is a **Fréchet space** but not normable.
-- **Locally Convex Spaces (LCS)**: A TVS is locally convex if there exists a neighborhood base at $0$ consisting of convex sets. This is equivalent to saying the topology is induced by a family of seminorms $\{p_\alpha\}_{\alpha \in A}$.
+- **Locally Convex Spaces (LCS)**: A TVS is locally convex if there exists a neighborhood base at $0$ consisting of convex sets. This is equivalent to saying the topology is induced by a family of semi-norms $\{p_\alpha\}_{\alpha \in A}$.
+- **Schauder basis**: given $V$ a TVS, a Schauder basis is a countable [[Set]] $\set{s_n}_{n\in\mathbb N}\subset V$ s.t. any $v\in V$ can be represented as a **unique Schauder-span** $$v=\sum_{n\in\mathbb N}\alpha_ns_n\where\alpha_n\in F$$The convergence is interpreted under the ambient topology ([[Topological Space]]), and can be reduced to only weak convergence in normed vector space (e.g. [[Banach Space]]).
+	- **Uniqueness requirement**: unique representation is crucial in the definition. For counterexamples of non-unique representations, see [[Hilbert Space]]. 
 ## Linear operator
 For TVS $V$ and $W$ over $\mathbb{K}$, a mapping $T: V \to W$ is a **continuous linear operator** if it satisfies the algebraic linearity conditions and is continuous with respect to the topologies $\tau_V$ and $\tau_W$.
 - **Algebraic Inheritance**: Definitions for $\ker T$, $\im T$, and the Rank-Nullity intuition persist. However, in the infinite-dimensional TVS setting, $\im T$ is not guaranteed to be closed, which is a central problem in solvability of operator equations.

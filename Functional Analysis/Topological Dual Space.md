@@ -20,16 +20,17 @@ The **double dual (bidual)** $V^{**}$ is the continuous dual of $V^*$. We define
   **Proof**: by definition of the operator norm ([[Normed Vector Space]]) in $V^{**}$ we have $$\|J(v)\| = \sup_{\ell \in V^*, \|\ell\|=1} |J(v)(\ell)| = \sup_{\ell \in V^*, \|\ell\|=1} |\ell(v)|$$From corollary of norm-preservation extension (see above) we know that for any $v$, there exists some $\ell$ with $\|\ell\|=1$ such that $\ell(v) = \|v\|$. Therefore we have $\|J(v)\| = \|v\|$. For injectivity it suffices to invoke the separating property above. 
 * **Completeness**: since $V^{**}$ is a dual space, it is always a [[Banach Space]], as shown above. Consequently, the closure $\overline{J(V)}$ is a completion of $V$. 
 ## Reflexive Space
-A [[Banach Space]] $V$ is called **reflexive** if the canonical embedding $J$ is surjective, i.e., $$J(V) = V^{**}$$Note that it's possible for $V$ to be isometrically isomorphic to $V^{**}$ via some other map without being reflexive, though such examples are pathological - see James' space below. 
-- **Basic properties & examples**
+A [[Banach Space]] $V$ is **reflexive** if the canonical embedding $J$ is surjective, i.e., $$J(V) = V^{**}$$Note that it's possible for $V$ to be isometrically isomorphic to $V^{**}$ via some other map without being reflexive, though such examples are pathological - see James' space below. 
+- **Examples**
 	* **Finite dimensional spaces**: any finite-dimensional [[Normed Vector Space]] is reflexive.
 	  **Proof**: by the result on dual system ([[Algebraic Dual Space]]) (or the [[Matrix]] representation of linear operator on [[Vector Space]], or even simply invoke RRT) we have that $$\dim V = \dim V^* = \dim V^{**}$$Since $J$ is injective (isometry), dimension equality implies surjectivity.
-	* **[[Lp Space]]**
+	* **[[Lp Space]]**: we need to separate the discussion for $1<p<\infty$ and $p=1,\infty$. 
 	    * For $1 < p < \infty$ and $(\Omega,\Sigma,\mu)$ a $\sigma$-finite [[Measure]] space, $L^p(\Omega)$ is reflexive, which follows from the Riesz Representation Theorem for $L^p$, stating that $$(L^p)^* \cong L^q,\quad\forall\frac{1}{p}+\frac{1}{q}=1, 1<p,q<\infty$$This is detailed in [[Lp Space]]
 	    * $L^1$ and $L^\infty$ (and $\ell^1, \ell^\infty$) are **not** reflexive, since $L^\infty,\ell^\infty$ are not separable.
-* **Hereditary Properties**:
+* **Hereditary Properties**
     * **Closed Subspaces**: closed subspace of a reflexive space is reflexive.
     * **Banach Space $V$**: $V$ is reflexive iff $V^*$ is reflexive.
+      **Proof**: given $J(V)=V^{**}$ the dual operator $$J^*:V^{***}\to V^*,\quad v^{***}\mapsto v^{***}\circ J$$is an isometric isomorphism, hence admits a bounded inverse by the Banach inverse theorem ([[Banach Space]]) which is exactly the surjective canonical embedding on $V^*$. Conversely, given $V^*$ reflexive, if $V$ is not reflexive we can pick $x_0^{**}\in V^{**}\backslash J(V)$, and applying HBT ([[Algebraic Dual Space]]) there exists $F\in V^{***}$ s.t. $$F\circ J(v)=0,\forall v\in V\qtextq{while} F(v_0^{**})\neq0$$Now by reflexivity of $V^*$ we know that there exists $\ell\in X^*$ s.t. $$F(x^{**})=x^{**}f,\forall x^{**}\in X^{**}\imply0=F\circ J(v)=J(v)(\ell)=\ell(v),\quad\forall v\in V$$We conclude that $f=0$, hence $F(v_0^{**})=v_0^{**}(\ell)=0$, which is a contradiction. 
 * **James's theorem**: a [[Banach Space]] $V$ is reflexive iff all $\ell\in V^*$ there exists an element $v\in V$ of norm $\|v\|\le1$ s.t. $\ell(v)=\|\ell\|$.
 ---
 ## Other info

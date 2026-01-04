@@ -1,5 +1,5 @@
 ## Orthonormal basis
-- **Maximal orthonormal subset**: for pre-Hilbert $\mathcal H_0$ an orthonormal subset $\{e_\lambda\}_{\lambda\in\Lambda}$ is maximal if $\langle u,e_\lambda\rangle=0,\forall\lambda\iff u=0$. Such set always exists assuming AoC ([[Set Theory]]). 
+- **Maximal orthonormal subset**: for pre-Hilbert $\mathcal H_0$ an orthonormal subset $\{e_\lambda\}_{\lambda\in\Lambda}$ is maximal if $\langle u,e_\lambda\rangle=0,\forall\lambda\iff u=0$. Such set always exists assuming AoC ([[Set]]). 
 - **Orthonormal basis**: for separable Hilbert space $H$ an (complete) orthonormal basis is a countable maximal orthonormal subset $\set{e_n}$. Equivalent characterizations include:
   - Finite linear combinations of $\set{e_n}$ is dense in $H$.
   - $\langle f,e_n\rangle=0,\forall n\in\mathbb N$ then $f=0$.
