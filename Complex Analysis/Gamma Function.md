@@ -14,7 +14,7 @@ The Gamma function is a generalization of the factorial function to non-integer 
 - **logarithmic convexity**: Gamma function is satisfies:
 	- A function $f$ is logarithmically convex if $\log\circ f$ is convex.
 	- A equivalent expression is $\Gamma''(x)\Gamma(x)>\Gamma'(x)^2$.
-- **Stirling's formula**: for $x\to\infty$, we have $\Gamma(x+1)\sim\sqrt{2\pi x}(\frac{x}{e})^x$. [[Series]]
+- **Stirling's formula**: for $x\to\infty$, we have $\Gamma(x+1)\sim\sqrt{2\pi x}(\frac{x}{e})^x$. [[Sequence]]
 - **Application**
 	- For any real number $a,b$, we have $$\int_0^\infty t^be^{-at}dt=\frac{\Gamma(b+1)}{a^{b+1}}$$According to Euler's formula $e^{ix}=\cos x+i\sin x$, integrals involving $\sin x^\alpha,\cos x^\alpha$ can be solved.
 	- Used in probability and statistics. [[Distribution Function Gallery]]

@@ -1,0 +1,3 @@
+## Example: the Poincaré metric
+Consider a domain $D\subset\mathbb C$ ([[Complex Function]]). Define $$g_P=\lambda(z,\overline z)^2(dx^2+dy^2)=\lambda(z,\overline z)^2|dz|^2$$where $\lambda:D\to\mathbb R^+$ is a smooth function called the **conformal factor**, then we can verify that it's a Riemannian metric on $D$. 
+- **Volume form**: on $(D,g_P)$ the canonical volume 2-form is given by $$\mu_{g_P}=\frac{i}{2}\lambda(z,\overline z)^2dz\wedge d\overline z=\lambda(x,y)^2dx\wedge dy$$
