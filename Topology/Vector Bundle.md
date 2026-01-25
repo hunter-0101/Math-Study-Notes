@@ -1,8 +1,6 @@
-A vector bundle is a tuple $(E,X,\pi)$ where $X$ a topological spaces (**base space**), $E$ the **total space**, and $\pi:E\to X$ a continuous surjection s.t. for each $x\in X$ the **fiber**: $\pi^{-1}(\set{x})$ exhibits a structure of finite-dimensional real vector space, with following **compatibility condition**: for every point $p\in X$ there exists neighborhood $U$, a number $k\in\mathbb N$, and a homeomorphism $\phi:U\times\mathbb R^k\to\pi^{-1}(U)$ s.t.
-- $(\pi\circ\phi)(x,v)=x,\forall v\in\mathbb R^k$.
-- $v\mapsto\phi(x,v)$ is a linear isomorphism.
-Some notations:
-- **Intuition**: vector bundle is essentially a topological construction that makes precise the idea of a family of vector spaces parameterized by another space $X$ (which could be a topological space, a manifold, or an algebraic variety)
+A **vector bundle** is a [[Fiber Bundle]] $(B,E,\pi,V)$ whose fiber is [[Vector Space]] $V$. 
+- **Intuition**: vector bundle is essentially a topological construction that makes precise the idea of a family of vector spaces parameterized by another space $X$ (which could be a topological space, a manifold, or an algebraic variety). 
+- **Rank**: the rank of a vector bundle is defined as $$\rank E=\dim V$$
 - **Fiber-preserving map**: for two total spaces $E,E'$ over $M$ a map $\phi:E\to E'$ is said to be fiber-preserving if $\phi(E_p)\subset \phi(E_p')$. Note that this is equivalent to $\pi=\pi'\circ\phi$.
 ## Smooth vector bundle
 Let $M$ a [[Smooth Manifold]], and $E$ the total space over it. For $p\in M$ denote $E_p$ the fiber at $p$.
@@ -15,9 +13,8 @@ A **$C^\infty$ vector bundle of rank $r$** is a tuple $(E,M,\pi)$ consisting of 
   and $\varphi$ is linear on each fiber, i.e., $\varphi:E_p\to F_{f(p)}$ is linear for each $p\in M$.
 	- **Category of vector bundles**: the collection of all $C^\infty$ vector bundles together with bundle maps between them forms a category. 
 	- **Trivial bundle**: any vector bundle $E\cong M\times\mathbb R^r$ is called a trivial bundle.
-- **Section**: a section is a map $s:M\to E$ s.t. $\pi\circ s=\id_M$. A section is smooth if $s$ is a smooth map from $M$ to $E$ ([[Smooth Manifold]]). 
-	- **Module structure**: denote $\Gamma(E)$ the set of all **smooth sections** of $E$, then it can be easily shown that $\Gamma(E)$ is closed under addition and multiplication with $f\in C^\infty(M)$. Hence $\Gamma(E)$ is a [[Module]] over the ring $C^\infty(M)$. Note that we sometimes call $\Gamma(E)=\Gamma(M,E)$ the **global section** to distinguish it from its restrictions $\Gamma(U,E)$ for $U\subset M$.
-- **Frame**: a frame over $U\subset M$ is a collection of sections $s_1,\cdots,s_r$ that forms a basis for the fiber $E_p$ for all $p\in U$. A frame is smooth if each $s_i$ is smooth.
-	- Note that $s_{i,p}=0$ is not allowed at any $p\in U$, otherwise it cannot form a local basis.
+- **Smooth section**: a (global) smooth section is a section ([[Fiber Bundle]]) $s:M\to E$ that is a smooth map ([[Smooth Manifold]]). Denote $$\Gamma(E)=\set{(s:M\to E):s\text{ is a smooth section of }E}$$It's obvious that $(\Gamma(E),+,\cdot)$ is a [[Module]] over the ring $C^\infty(M)$. 
+	- **Local smooth section**: we sometimes denote $\Gamma(E)=\Gamma(M,E)$ to distinguish it from **local smooth section**, which is a subset $\Gamma(U,E)\subset\Gamma(M,E)$ for some $U\subset M$. 
+- **Frame**: a frame over $U\subset M$ is a collection of linearly independent sections $$S=(s_1,\cdots,s_r)\quad\st\quad E_p=\span S_p,\quad\forall p\in U$$A frame is said to be smooth if each $s_i$ is smooth.
 	- **Frame of trivialization**: given $\phi:E|_U\isoto U\times\mathbb R^r$ consider $\overline e_i:p\mapsto(p,e_i)$ the standard frame of the trivial bundle, then the sections $t_i=\phi^{-1}\circ\overline e_i$ is a frame for $\phi$.
 	- **Characterization of smooth section**: given $s_i$ a smooth frame over $U$, then any section $s=\sum c^is_i$ is smooth iff $c^i\in C^\infty(U),\forall i$. $\Leftarrow$ is immediate, while for $\Rightarrow$ we first notice that $$(\phi\circ s)(p)=\sum c^i(p)\phi(t_i(p))=\sum c^i(p)(p,e_i)=\left(p,\sum c^i(p)e_i\right)$$when $s_i=t_i$ the frame of trivialization, in which case $\phi\circ s\in C^\infty$ ensures that $c^i\in C^\infty$, while for general $s_i$ we can let $s_i=\sum a_i^jt_j$ and repeat the above process, utilizing Cramer's rule ([[Solving Linear System]]). 

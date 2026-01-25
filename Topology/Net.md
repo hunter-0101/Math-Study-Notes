@@ -1,6 +1,6 @@
 A **directly set** $J$ is a set with partial order $\preceq$ such that for each pair $\alpha,\beta\in J$ there exists $\gamma\in J$ s.t. $\alpha\preceq\gamma,\beta\preceq\gamma$ ([[Order]]). Given topological space $(X,\mathcal T)$, any function $f:J\to X$ is called a **net**. Usually we denote $f(\alpha)$ as $x_\alpha$, and $f$ as $(x_\alpha)_{\alpha\in J}$.
 - **Convergence**: $x_\alpha\to x$ if for each neighborhood $U$ of $x$ there exists $\alpha\in J$ s.t. $\alpha\preceq\beta\Rightarrow x_\beta\in U$.
-	- If $x_\alpha\to x,y_\alpha\to y$, then $(x_\alpha,y_\alpha)\to(x,y)$ due to property of product topology. [[Topological Space]]
+	- If $x_\alpha\to x,y_\alpha\to y$, then $(x_\alpha,y_\alpha)\to(x,y)$ due to property of [[Product Topology]]. 
 	- If $X$ is Hausdorff, then a net converges to at most one point. [[Separation Axioms]]
 - **Limit point**: let $A\subset X$, then $x\in\overline A$ iff there is a net of points of $A$ converging to $x$.
 - **Criterion of continuity**: $f:X\to Y$ is continuous iff $x_\alpha\to x\Rightarrow f(x_\alpha)\to f(x)$.
