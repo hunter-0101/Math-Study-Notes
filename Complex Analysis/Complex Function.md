@@ -1,8 +1,4 @@
 Complex functions inherit all definitions and properties from [[Function on Euclidean Space]] in real analysis, including continuity, convergence, etc. We'll mainly focus on [[Holomorphic Function]], and further **entire** (holomorphic on entire $\mathbb{C}$) and **meromorphic** (has no singularities in $\mathbb C$ except poles) ones.
-- **Why $\mathbb C$ is so different from $\mathbb R^2$**: the main difference lies in their **algebraic structure**. 
-	- $\mathbb R^2$ is simply a [[Vector Space]], and the most refined structure we have is linearity. For $f:\mathbb R^2\to\mathbb R^2$ two coordinates are treated separately, and it's very common that $f$ has no directional derivative except for those along $x$ or $y$. 
-	- $\mathbb C$ is a [[Field]], and for $f:\mathbb C\to\mathbb C$ complex multiplication introduces both scaling and rotation counter-clockwise, which forces $f$ to behaves locally like multiplication by some $z\in\mathbb C$. The key is that we're considering $\mathbb C$-linearity rather than $\mathbb R$-linearity. 
-  Another less motivating but interesting way of viewing complex analysis is that we're investigating a set of functions in $C^1(\mathbb R^2)$ that satisfies the Cauchy-Riemann equation, and the second requirement allows us to use tools from $\mathbb C$, which "happen" to tailored for this purpose. 
 - **Comparison between different fields**: let's go over three different fields:
 	- **[[Real Number System]] $\mathbb R$**:  the only structure we have is linearity compatible with additivity and multiplication, and as can be seen in [[Differential Calculus on Euclidean Space]], even differentiable at every point cannot guarantee the continuity of derivative. 
 	- **Complex number $\mathbb C$**: this is a bit stronger, since geometrically there are two linearly independent axis related by complex multiplication. This imposes stronger regulation on the manifold structure of the field itself, and as discussed below, complex differentiability is immediately equivalent to smoothness and analyticity. 
@@ -48,6 +44,8 @@ Since analytic function is conformal, i.e., acts like an amplitwist $dz\mapsto z
 - **Inverse function**: $\omega=f(z)$, then $(f^{-1})'(\omega)=1/f'(z)$. 
 Their proofs are essentially the same as in real case. 
 ## Elementary function
+- **Power function**: just like functions over [[Real Number System]], the power function over $\mathbb C$ is $$f_n(z)=z^n$$This is the most basic building block of [[Holomorphic Function]] due to the Laurent series. 
+	- **Harmonic polynomial**: a harmonic polynomial is a polynomial that satisfies the [[Laplace's Equation]]. Over $\mathbb R^2$ it can be constructed via polar coordinate as $$h_n(r,\theta)=\Re z^n=r^n\cos n\theta$$which follows from de Moivre's theorem ([[Complex Number]]). The expression under Cartesian coordinate can be derived by expanding $\cos n\theta$ into $\sin\theta,\cos\theta$ using binomial expansion. 
 - **Fractional linear function**: we define fractional linear functions as $f$ of the form$$f(z)=\frac{az+b}{cz+d},\quad ad-bc\neq0,f(0)=\infty,f(\infty)=\frac{a}{c}$$Then it can be verified that $f:\overline{\mathbb C}\to\overline{\mathbb C}$ is entire and conformal everywhere. We also call this kind of transform a **Möbius transform**. 
 	- $f(z)=\frac{1}{z}$ maps all circles onto circles. Further, any fractional linear function $L$ maps points $z,z^*$ that are conjugate w.r.t a circle $\Gamma$ to $\omega,\omega^*$ that are conjugate w.r.t $L(\Gamma)$.
 	- Set of FL forms a group w.r.t composition.
