@@ -1,6 +1,15 @@
-An [[Integral Domain]] $R$ is called a **Euclidean domain** if it admits a map $\delta:R-\set{0}\to\mathbb N$ s.t. **Euclidean division** in $R$ is possible: given any $f,g\in R,g\neq0$ there exists $q,r\in R$ s.t. $$f=qg+r\quad\text{where}\quad \delta(r)<\delta(g)\text{ or }r=0$$the map $\delta$ is called the **Euclidean function** of $R$.
-- **PID structure**: every Euclidean domain is a PID ([[Ideal]]).
+An [[Integral Domain]] $R$ is called a **Euclidean domain** if it admits a map $\delta:R\setminus\set{0}\to\mathbb N$, called the **Euclidean valuation (function)**, satisfying two conditions:
+1. **Euclidean division**: given any $a,b\in R,b\neq0$ there exists $q,r\in R$ s.t. $$b=qa+r\quad\text{where}\quad \delta(r)<\delta(a)\text{ or }r=0$$Here $b$ is the **dividend**, while $a$ is the **divisor**. When there are multiple Euclidean valuations we specify one of them by saying "Euclidean division w.r.t. $\delta$". 
+2. **Multiplicative monotonicity**: we have $$\delta(a)\le\delta(ab),\quad\forall a,b\in R\setminus\set{0}$$This condition ensures compatibility of the valuation with division. 
+A Euclidean domain can be seen as a generalization to our familiar set of integers $\mathbb Z$. 
+- **Alternative definition**: some books define Euclidean domain using only condition 1. This is acceptable since on any such integral domain $(R,\delta)$ we can alway set $$\overline\delta(a)=\min_{b\neq0}\delta(ab)$$which satisfies condition 2, and makes $\paren{R,\overline\delta}$ also an Euclidean domain. 
+  **Proof**: to begin with, $\overline\delta$ satisfies condition 2 because $$\overline\delta(ab)=\min_{c\neq0}\delta(abc)\le\min_{d\neq 0}\delta(ad)=\overline\delta(a)$$For Euclidean division w.r.t. $\overline\delta$, for any $a,b\in R,b\neq0$ we set $\overline\delta(b)=\delta(bc)$ and consider the Euclidean division by $bc$:$$a=q_c(bc)+r\where r=0\text{ or }\delta(r)<\delta(bc)$$Set $q=cq_c$, then we have $a=qb+r$, with the Euclidean valuation of $r$ given by $$\overline\delta(r)\le\delta(r)\le\delta(bc)=\overline\delta(b)$$Therefore we indeed have a valid Euclidean division. 
+	- **Discussion**: the main rationale behind this alternative definition is that, while these two definitions characterizes the same set of integral domains, condition 2 is not particularly relevant in proving the two crucial theorems about Euclidean domain: 1). Euclidean domain is PID. 2). Euclidean algorithm terminates after finitely many steps. 
+	- **Reference**: more about this can be found in this [note](https://kconrad.math.uconn.edu/blurbs/ringtheory/euclideanrk.pdf)
+## Properties
+- **PID structure**: every Euclidean domain is a [[Principal Ideal Domain]].
   **Proof**: pick any $\mathfrak a\subset R$, then by definition we can pick $a\in\mathfrak a$ s.t. $\delta(a)$ is minimal across $\mathfrak a-\set{0}$. Now we can easily verify that $\mathfrak a=(a)$. 
+	- **Intuition**: the existence of division algorithm allows us to view the ideal generation process as a "descent". For any $I\in\Id F[X]$ we can pick the non-zero element of minimal degree. 
 ## Euclidean algorithm
 The standard Euclidean algorithm takes the following procedure:
 ```python

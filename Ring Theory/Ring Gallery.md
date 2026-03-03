@@ -10,7 +10,7 @@ Ways to construct $\mathbb R$ from $\mathbb Q$ includes Dedekind cuts ([[Real Nu
 - **Involution**: define the map $\sigma(r\mathbf 1+s\mathbf i+t\mathbf j+u\mathbf k)=r\mathbf1-s\mathbf i-t\mathbf j-u\mathbf k$, then it's called the convolution. It can be shown that $h\sigma(h)=\det(h)\mathbf 1$, and $\sigma\circ\sigma=id_{\mathbb H}$.
 - **Pure part**: let $P=\set{s\mathbf i+t\mathbf j+u\mathbf k|s,t,u\in\mathbb R}$, then it's called the pure part of $\mathbb H$. If we identity $P$ with 3-dimensional column vector space $R^3$ by the correspondence of entries, then for $p,q\in P$ we have $$pq=-(p\cdot q)\mathbf1+p\times q$$For $h\in\mathbb H$, if we define $\gamma_h:l\mapsto hlh^{-1}$, then it can be shown that the action of $\gamma_h$ on $P$ is actually rotation.
 ## Matrix ring
-Denote $F$-algebra a ring $A$ with a multiplicative identity such that $A$ is an $F$-vector space and is linear on $F$. Define the tensor product $\otimes$ for an extension field $K$ of $F$ as$$M_n(F)\otimes_F K\cong M_n(K)$$
+Denote $F$-algebra a ring $A$ with a multiplicative identity such that $A$ is an $F$-vector space and is linear on $F$. Define the [[Tensor]] product $\otimes$ for an extension field $K$ of $F$ as$$M_n(F)\otimes_F K\cong M_n(K)$$
 - **Automorphism preserves determinant and characteristic polynomial**: 
 - **Automorphisms of matrix group**: for an arbitrary field $K$, we will show that $Aut(M_n(K))$ consists only the inner automorphisms.
   **Proof**: Denote $E_{ij}$ the matrix whose entries equals $1$ at $(i,j)$ and $0$ otherwise.
